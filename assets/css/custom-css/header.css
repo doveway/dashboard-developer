@@ -3,13 +3,14 @@
 }
 
 header nav {
-  background: #f3f6f8;
+  background: #ffffff;
 }
 
 .body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f9f9fb;
 }
 
 .default-border-radius {
@@ -224,7 +225,7 @@ p {
 }
 
 .menu-navbar-bg {
-  background-color: #f6f7f8;
+  background-color: #ffffff;
 }
 
 .nav-mobile {
