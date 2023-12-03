@@ -90,9 +90,9 @@ header nav {
 .primary-background {
   background: #662d91;
   color: #ffffff;
+  transition: all 1s;
 }
 .primary-background:hover {
-  transition: all;
   background: #8445b4;
   color: #ffffff;
 }
@@ -181,7 +181,7 @@ p {
 }
 
 .nav-bottom-color {
-  border-bottom: 1px solid #eeeeef;
+  border-bottom: 1.5px solid #eeeeef;
 }
 
 .user-shorthand {
@@ -208,7 +208,7 @@ p {
 
 .dashboard-active,
 .sub-menu--dashboard-active {
-  border-bottom: 3px solid #64318a;
+  border-bottom: 2px solid #64318a;
   color: #222224;
 }
 
@@ -245,8 +245,14 @@ p {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
 }
 
-.sub-menu {
-  padding-left: 17em;
+.sub-menu a {
+  /* color: #a6a299; */
+  transition: all 1s;
+}
+.sub-menu a:hover {
+  color: #797978;
+  font-weight: 600;
+  /* padding-left: 17em; */
 }
 
 .address-title {
@@ -282,6 +288,52 @@ p {
   left: 12px;
 }
 
+.side-bar {
+  flex-direction: column;
+}
+
+.developer-logo {
+}
+.developer-name {
+  font-weight: 600;
+}
+.developer-stats {
+  border-radius: 9px;
+  border: 1.3px solid #e9e9e9;
+  background: #fff;
+}
+
+.developer-stats tr > td {
+  padding: 5px 10px;
+}
+
+.developer-stats table tr:first-child {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.forward-button {
+  border-radius: 20px;
+}
+
+.stats-container {
+  border-radius: 15px;
+  border: 1.3px solid #e9e9e9;
+  background: #fff;
+}
+
+.stats-number {
+  color: #222222;
+  font-size: 55px;
+  font-weight: 700;
+}
+
+.portfolio-number {
+  color: #a6a299;
+  border-radius: 7px;
+  border: 1.3px solid #a6a299;
+  padding: 4.5px;
+}
+
 /*****MEDIA QUERY****/
 
 /* Small devices (landscape phones, 576px and up) */
@@ -315,6 +367,31 @@ p {
 
   .sub-nav {
     font-size: 13px;
+  }
+
+  .side-bar {
+    flex-direction: row;
+  }
+
+  .developer-logo {
+    margin-right: 5px;
+  }
+  .developer-name {
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 6px;
+    flex: 1;
+  }
+
+  .developer-stats {
+    border-radius: 9px;
+    border: 1.3px solid #e9e9e9;
+    background: #fff;
+    font-size: 12px;
+  }
+
+  .developer-stats tr > td {
+    padding: 1px 4px;
   }
 }
 
