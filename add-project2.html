@@ -32,7 +32,11 @@
   <link rel="stylesheet" href="./assets/css/custom-css/footer.css" />
   <link rel="stylesheet" href="./assets/css/custom-css/index.css" />
 
-  <title>Dashboard - Developer index</title>
+  <!-- DropZone library for drag and drop -->
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+  <title>Dashboard - Developer add-project-2</title>
 </head>
 
 <body class="body">
@@ -143,6 +147,7 @@
 
   <main class="container-fluid d-flex flex-column " style="flex: 1">
     <div class="row pt-md-5 pt-2">
+      <!-- side-bar start here -->
       <div class="col-md-3 col-12 ">
         <div class="d-flex align-items-center side-bar">
           <div class="developer-logo">
@@ -168,11 +173,11 @@
           </div>
           <div class="d-md-block d-none my-4">
             <div>
-              <button class="btn primary-background default-border-radius" type="button"> <svg
+              <a href="#" class="btn primary-background default-border-radius" type="button"> <svg
                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-                </svg> Add Project</button>
+                </svg> Add Project</a>
             </div>
 
             <div class="divider mt-5 mb-3"></div>
@@ -183,6 +188,8 @@
           </div>
         </div>
       </div>
+
+      <!-- main body starts here -->
       <div class="col-md-8  col-12">
         <div class="my-md-0 my-4">
           <p style="font-weight: 600; font-size: 20px;">Welcome, Terra Developers <img src="assets/images/hand.svg"
@@ -192,19 +199,18 @@
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  sub-menu--dashboard-active"
-              href="index.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M7 13.125V14.875M10.5 9.625V14.875M14 6.125V14.875M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#A6A299" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio Stats</span>
               </div>
             </a>
 
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="#">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
@@ -225,135 +231,120 @@
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="add-project1.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active"
+              href="add-project1.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M10.5 7V14M7 10.5H14M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Add Project</span>
               </div>
             </a>
           </div>
         </div>
+
         <div class="row my-4">
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Portfolio</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path
-                      d="M1 12.9292L12.5707 18.7145C12.7281 18.7932 12.8068 18.8326 12.8894 18.8481C12.9625 18.8618 13.0375 18.8618 13.1106 18.8481C13.1932 18.8326 13.2719 18.7932 13.4293 18.7145L25 12.9292M1 18.9292L12.5707 24.7145C12.7281 24.7932 12.8068 24.8326 12.8894 24.8481C12.9625 24.8618 13.0375 24.8618 13.1106 24.8481C13.1932 24.8326 13.2719 24.7932 13.4293 24.7145L25 18.9292M1 6.92918L12.5707 1.14384C12.7281 1.06513 12.8068 1.02578 12.8894 1.01029C12.9625 0.99657 13.0375 0.99657 13.1106 1.01029C13.1932 1.02578 13.2719 1.06513 13.4293 1.14384L25 6.92918L13.4293 12.7145C13.2719 12.7932 13.1932 12.8326 13.1106 12.8481C13.0375 12.8618 12.9625 12.8618 12.8894 12.8481C12.8068 12.8326 12.7281 12.7932 12.5707 12.7145L1 6.92918Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">112</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          <div class="col-12 my-3">
+            <p class="font-weight-bold">Unit details</p>
           </div>
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Unit locked</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M13 7L11.8845 4.76892C11.5634 4.1268 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.0799 2 6.2V7M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7ZM10.1 17.5H13.9C14.4601 17.5 14.7401 17.5 14.954 17.391C15.1422 17.2951 15.2951 17.1422 15.391 16.954C15.5 16.7401 15.5 16.4601 15.5 15.9V15.1C15.5 14.5399 15.5 14.2599 15.391 14.046C15.2951 13.8578 15.1422 13.7049 14.954 13.609C14.7401 13.5 14.4601 13.5 13.9 13.5H10.1C9.53995 13.5 9.25992 13.5 9.04601 13.609C8.85785 13.7049 8.70487 13.8578 8.60899 14.046C8.5 14.2599 8.5 14.5399 8.5 15.1V15.9C8.5 16.4601 8.5 16.7401 8.60899 16.954C8.70487 17.1422 8.85785 17.2951 9.04601 17.391C9.25992 17.5 9.53995 17.5 10.1 17.5ZM13.75 13.5V11.75C13.75 10.7835 12.9665 10 12 10C11.0335 10 10.25 10.7835 10.25 11.75V13.5H13.75Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">100</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          <div class="col-12">
+            <form>
+              <div class="row">
+                <!-- 1st column of the form -->
+                <div class="col-md-6 col-12">
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Type of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Number of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control input-custom" placeholder="Size (sqm)">
+                  </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Receivbles</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 7H14C17.3137 7 20 9.68629 20 13C20 16.3137 17.3137 19 14 19H4M4 7L8 3M4 7L8 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;100m</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+                  <div class="mb-4">
+                    <p class="mb-3">Features</p>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="oven" value="option1">
+                      <label class="form-check-label custom-font-size-14" for="oven">Oven</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="gas-hob" value="option2">
+                      <label class="form-check-label custom-font-size-14" for="gas-hob">Gas hob</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="microwave" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="microwave">Microwave</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="AC" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="AC">AC</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="washing-machine" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="washing-machine">Washing machine</label>
+                    </div>
+                  </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Payout</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 7H10C6.68629 7 4 9.68629 4 13C4 16.3137 6.68629 19 10 19H20M20 7L16 3M20 7L16 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;90m</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Outstanding Receivables</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M14 10L21 3M21 3H15M21 3V9M10 14L3 21M3 21H9M3 21L3 15" stroke="#222222" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;10m</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
 
+                </div>
+
+                <!-- 2nd column of the form -->
+                <div class="col-md-6 col-12 mt-md-0 mt-4">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Selling price">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="BSS Special price">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1"
+                      rows="3">More details ( optional )</textarea>
+                  </div>
+                  <div class="my-dropzone">
+                    <div class="form-group">
+                      <input type="file" class="form-control ">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-12 my-5">
+                  <button class="btn primary-background default-border-radius" id="add-unit-btn" type="button"> <svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg> Add another unit type</button>
+                </div>
+
+                <div class="col-12 mx-0" id="new-unit"></div>
+
+                <div class="col-md-8 col-12 d-flex mt-5 justify-content-between">
+                  <a href="add-project1.html" class="btn  default-border-radius" type="button"
+                    style="border: 2px solid #662D91;">back</a>
+                  <button type="submit" class="btn primary-background default-border-radius" style="width: 70%"
+                    type="button"> Upload
+                    Project</button>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
 
         </div>
       </div>
@@ -381,6 +372,113 @@
   <script src="./assets/js/bootstrap-js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      //Add new another unit type
+      const newUnit = `
+            <div class="row new-unit-form" >
+                <div class="d-flex col-12 py-3 justify-content-end text-danger">
+                  <i class="fa-solid fa-circle-xmark" style="cursor: pointer;" id="closeContact"></i>
+                </div>
+
+                <!-- 1st column of the form -->
+                <div class="col-md-6 col-12">
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Type of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Number of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control input-custom" placeholder="Size (sqm)">
+                  </div>
+
+                  <div class="mb-4">
+                    <p class="mb-3">Features</p>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="oven" value="option1">
+                      <label class="form-check-label custom-font-size-14" for="oven">Oven</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="gas-hob" value="option2">
+                      <label class="form-check-label custom-font-size-14" for="gas-hob">Gas hob</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="microwave" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="microwave">Microwave</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="AC" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="AC">AC</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="washing-machine" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="washing-machine">Washing machine</label>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                </div>
+
+                <!-- 2nd column of the form -->
+                <div class="col-md-6 col-12 mt-md-0 mt-4">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Selling price">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="BSS Special price">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1"
+                      rows="3">More details ( optional )</textarea>
+                  </div>
+                  <div class="my-dropzone">
+                    <div class="form-group">
+                      <input type="file" class="form-control ">
+                    </div>
+                  </div>
+
+                </div>
+            </div>  
+              
+        
+        `;
+
+      // create a new form
+      $("#add-unit-btn").click(function () {
+        $("#new-unit").append(newUnit)
+      });
+
+
+      // close the new contact form
+      $(document).on('click', '#closeContact', function (e) {
+        $("#closeContact").parents(".new-unit-form ").remove();
+      });
+
+    });
+
+
+  </script>
+
+  <script>
+    // Dropzone has been added as a global variable.
+    const dropzone = new Dropzone("div.my-dropzone", { url: "/file/post" });
+  </script>
 
   <!-- <script>
     // $(document).ready(function () {
