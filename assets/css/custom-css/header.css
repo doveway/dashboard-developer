@@ -421,6 +421,9 @@ p {
     border-left: 3px solid #64318a;
     border-bottom: 0;
   }
+  .side-bar {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 768px) {
