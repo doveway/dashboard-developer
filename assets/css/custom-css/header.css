@@ -193,6 +193,7 @@ p {
 
 .user-container {
   position: relative;
+  cursor: pointer;
 }
 
 .nav-bottom-color {
@@ -372,6 +373,10 @@ p {
 .filter:hover {
   background-color: #662d91;
   color: #ffffff;
+}
+
+.page-link {
+  color: #16161d;
 }
 
 /*****MEDIA QUERY****/

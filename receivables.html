@@ -30,9 +30,11 @@
   <!-- custom CSS -->
   <link rel="stylesheet" href="./assets/css/custom-css/header.css" />
   <link rel="stylesheet" href="./assets/css/custom-css/footer.css" />
-  <link rel="stylesheet" href="./assets/css/custom-css/index.css" />
+  <link rel="stylesheet" href="./assets/css/custom-css/receivables.css" />
 
-  <title>Dashboard - Developer add-project</title>
+
+
+  <title>Receivables</title>
 </head>
 
 <body class="body">
@@ -111,7 +113,6 @@
               </div>
             </div>
           </li>
-        </ul>
 
     </nav>
 
@@ -159,7 +160,7 @@
   <main class="container-fluid d-flex flex-column " style="flex: 1">
     <div class="row pt-md-5 pt-2">
       <!-- side-bar start here -->
-      <div class="col-lg-3 col-md-12 col-12">
+      <div class="col-lg-3 col-md-12 col-12 ">
         <div class="d-flex justify-content-between align-items-center side-bar">
           <div class="developer-logo">
             <img src="assets/images/terra-logo.png" alt="">
@@ -221,7 +222,7 @@
               </div>
             </a>
 
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="portfolio.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 " href="portfolio.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
@@ -229,26 +230,25 @@
                     stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio</span>
-                <span class="portfolio-number ml-2">112</span>
+                <span class="portfolio-number ml-2 ">112</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="receivables.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active" href="">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M14.875 16.5153C16.7312 15.163 17.9375 12.9724 17.9375 10.5C17.9375 6.39241 14.6076 3.06252 10.5 3.06252H10.0625M10.5 17.9375C6.39238 17.9375 3.0625 14.6076 3.0625 10.5C3.0625 8.02768 4.26883 5.83709 6.125 4.48475M9.625 19.6L11.375 17.85L9.625 16.1M11.375 4.90002L9.625 3.15002L11.375 1.40002"
-                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active"
-              href="add-project1.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 " href="add-project1.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M10.5 7V14M7 10.5H14M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Add Project</span>
               </div>
@@ -257,121 +257,109 @@
         </div>
 
         <div class="row my-4">
-          <div class="col-12 my-3">
-            <p class="font-weight-bold">Project details</p>
-          </div>
-          <div class="col-12">
-            <form>
-              <div class="row">
-                <!-- 1st column of the form -->
-                <div class="col-md-6 col-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control input-custom" placeholder="Project name">
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <select id="inputState" class="form-control input-custom">
-                        <option selected>State</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <select id="inputState" class="form-control input-custom">
-                        <option selected>City</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
 
-                  <div class="mb-4">
-                    <p class="mb-3" style="text-decoration: underline;">Facilities</p>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox1">Swiming pool</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox2">Gym</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox3">Others</label>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p class="mb-3" style="text-decoration: underline;">Services</p>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox1">Fully serviced</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox2">Partially
-                        serviced</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-3">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                      <label class="form-check-label custom-font-size-14" for="inlineCheckbox3">Self serviced</label>
-                    </div>
-                  </div>
+          <div class="col-12 ">
+            <div class="default-background default-background-border p-3">
+              <div><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                  <path
+                    d="M14.875 16.5153C16.7312 15.163 17.9375 12.9724 17.9375 10.5C17.9375 6.39241 14.6076 3.06252 10.5 3.06252H10.0625M10.5 17.9375C6.39238 17.9375 3.0625 14.6076 3.0625 10.5C3.0625 8.02768 4.26883 5.83709 6.125 4.48475M9.625 19.6L11.375 17.85L9.625 16.1M11.375 4.90002L9.625 3.15002L11.375 1.40002"
+                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> <span>Receivables Overview</span></div>
+              <div class="mt-5 row flex-wrap mx-md-4 mx-1">
+                <div class="overview-stat mr-2 pr-2 mb-3 mr-md-5 mb-md-3 pr-md-5 ">
+                  <p class="custom-font-size-13 secondary-text-color ">Total Downpayment</p>
+                  <p class="font-weight-bold" style="font-size:18px;">&#8358;50,200,000</p>
                 </div>
-
-                <!-- 2nd column of the form -->
-                <div class="col-md-6 col-12 mt-md-0 mt-4">
-                  <div class="form-group">
-                    <input type="text" class="form-control input-custom" placeholder="Number of Units">
-                  </div>
-                  <div class="form-group row">
-                    <div class="col">
-                      <label class="mb-0">Start date</label>
-                      <input type="date" class="form-control" placeholder="First name">
-                    </div>
-                    <div class="col">
-                      <label class="mb-0">Delivery date</label>
-                      <input type="date" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <select id="inputState" class="form-control input-custom">
-                      <option selected>Current stage</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <select id="inputState" class="form-control input-custom">
-                      <option selected>Land title</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <select id="inputState" class="form-control input-custom">
-                      <option selected>Approvals</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-
+                <div class="overview-stat mr-2 pr-2 mb-3 mr-md-5 mb-md-3 pr-md-5 ">
+                  <p class="custom-font-size-13 secondary-text-color ">Outstanding receivable</p>
+                  <p class="font-weight-bold" style="font-size:18px;">&#8358;10,000,000</p>
+                </div>
+                <div class="overview-stat mr-2 pr-2 mb-3 mr-md-5 mb-md-3 pr-md-5 ">
+                  <p class="custom-font-size-13 secondary-text-color ">Total Payout</p>
+                  <p class="font-weight-bold" style="font-size:18px;">&#8358;50,200,000</p>
+                </div>
+                <div class="overview-stat mr-2 pr-2 mb-3 mr-md-5 mb-md-3 pr-md-5 ">
+                  <p class="custom-font-size-13 secondary-text-color ">Customer</p>
+                  <p class="font-weight-bold" style="font-size:18px;">200</p>
                 </div>
               </div>
-            </form>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 mt-5 ">
+            <p>Payout history</p>
+            <div class="my-md-3 my-2 p-3 default-background default-background-border table-responsive">
+              <table class="table custom-font-size-14">
+                <thead class="">
+                  <tr>
+                    <th scope="col" class="border-top-0">Amount</th>
+                    <th scope="col" class="border-top-0">Date</th>
+                    <th scope="col" class="border-top-0">Status</th>
+                    <th scope="col" class="border-top-0">Ref ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>&#8358;10,500,000</td>
+                    <td>21/05/2023</td>
+                    <td><button class="btn custom-font-size-14 custom-btn-success">Paid</button></td>
+                    <td>eeyyYTT900JHHsaw</td>
+                  </tr>
+                  <tr>
+                    <td>&#8358;10,500,000</td>
+                    <td>21/05/2023</td>
+                    <td><button class="btn custom-font-size-14 custom-btn-danger">Failed</button></td>
+                    <td>eeyyYTT900JHHsaw</td>
+                  </tr>
+                  <tr>
+                    <td>&#8358;10,500,000</td>
+                    <td>21/05/2023</td>
+                    <td><button class="btn custom-font-size-14 custom-btn-success">Paid</button></td>
+                    <td>eeyyYTT900JHHsaw</td>
+                  </tr>
+                  <tr>
+                    <td>&#8358;10,500,000</td>
+                    <td>21/05/2023</td>
+                    <td><button class="btn custom-font-size-14 custom-btn-danger">Locked</button></td>
+                    <td>eeyyYTT900JHHsaw</td>
+                  </tr>
+                  <tr>
+                    <td>&#8358;10,500,000</td>
+                    <td>21/05/2023</td>
+                    <td><button class="btn custom-font-size-14 custom-btn-success">Paid</button></td>
+                    <td>eeyyYTT900JHHsaw</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div class="col-12 my-5">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="mt-md-5 mt-2 d-flex justify-content-end">
-              <a class="btn primary-background" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>&nbsp;&nbsp;Next: Add Type of unit
-              </a>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </main>
@@ -397,6 +385,8 @@
   <script src="./assets/js/bootstrap-js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
+
+
 
   <!-- <script>
     // $(document).ready(function () {

@@ -1,0 +1,46 @@
+.overview-stat {
+  max-width: 33.3%;
+}
+
+/*****MEDIA QUERY****/
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 480px) {
+  .overview-stat {
+    max-width: 46%;
+  }
+
+  .overview-stat:not(:last-child, :nth-child(2n)) {
+    border-right: 1px solid #ccccd3 !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  .overview-stat {
+    max-width: 46%;
+  }
+
+  .overview-stat:not(:last-child, :nth-child(2n)) {
+    border-right: 1px solid #ccccd3 !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+  .overview-stat:not(:last-child, :nth-child(4n)) {
+    border-right: 1px solid #ccccd3 !important;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (992px <=width <=1024px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
