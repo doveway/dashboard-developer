@@ -76,14 +76,118 @@
               </svg>
             </a>
           </li>
-          <li class="nav-item mx-3">
-            <a href="#">
+          <li class="nav-item mx-3 dropdown">
+            <a href="#" type="button" data-toggle="dropdown">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M14 21H10M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
                   stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </a>
+            <!-- Notification modal starts here -->
+            <div class="dropdown-menu"
+              style="left: unset; right: 0; width: 297px; background-color: unset; border: none">
+              <form class="accordion" id="accordionExample">
+                <div>
+                  <div class="card">
+                    <div class="card-header" id="heading-0">
+                      <h2 class="mb-0">
+                        <button class="btn d-flex justify-content-between  btn-block text-left btn-notification"
+                          type="button" data-toggle="collapse" data-target="#collapse-0" aria-expanded="true"
+                          aria-controls="collapse-0">
+                          <div class="d-flex ">
+                            <svg class="mt-1 close-envelope-0" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                              viewBox="0 0 17 17" fill="none">
+                              <path
+                                d="M9.73539 1.86543L15.0677 5.33145C15.2562 5.45392 15.3504 5.51516 15.4186 5.59684C15.479 5.66915 15.5244 5.75279 15.5521 5.84285C15.5834 5.9446 15.5834 6.05696 15.5834 6.28169V11.475C15.5834 12.6651 15.5834 13.2601 15.3518 13.7147C15.1481 14.1146 14.823 14.4396 14.4231 14.6434C13.9686 14.875 13.3735 14.875 12.1834 14.875H4.81675C3.62664 14.875 3.03158 14.875 2.57702 14.6434C2.17717 14.4396 1.85209 14.1146 1.64836 13.7147C1.41675 13.2601 1.41675 12.6651 1.41675 11.475V6.28169C1.41675 6.05696 1.41675 5.9446 1.44804 5.84285C1.47573 5.75279 1.52112 5.66915 1.58154 5.59684C1.6498 5.51516 1.74401 5.45393 1.93243 5.33145L7.26477 1.86543M9.73539 1.86543C9.28826 1.57479 9.06469 1.42947 8.82381 1.37293C8.61088 1.32295 8.38928 1.32295 8.17635 1.37293C7.93547 1.42947 7.71191 1.57479 7.26477 1.86543M9.73539 1.86543L14.8525 5.19153C15.0961 5.34987 15.2179 5.42905 15.2601 5.52945C15.2969 5.6172 15.2969 5.71609 15.2601 5.80383C15.2179 5.90424 15.0961 5.98341 14.8525 6.14176L9.73539 9.46786C9.28826 9.75849 9.06469 9.90381 8.82381 9.96035C8.61088 10.0103 8.38928 10.0103 8.17635 9.96035C7.93547 9.90381 7.7119 9.7585 7.26477 9.46786L2.1477 6.14176C1.90409 5.98341 1.78228 5.90424 1.74009 5.80383C1.70323 5.71609 1.70323 5.6172 1.74009 5.52945C1.78228 5.42905 1.90409 5.34987 2.1477 5.19153L7.26477 1.86543"
+                                stroke="#222222" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg class="mt-1 d-none open-envelope-0" xmlns="http://www.w3.org/2000/svg" width="17"
+                              height="17" viewBox="0 0 17 17" fill="none">
+                              <path
+                                d="M1.41675 4.95837L5.09572 7.41102C5.30797 7.55252 5.41409 7.62327 5.5289 7.67339C5.63081 7.71788 5.7376 7.75021 5.84707 7.76972C5.9704 7.79171 6.09795 7.79171 6.35304 7.79171H10.6471C10.9022 7.79171 11.0298 7.79171 11.1531 7.76972C11.2626 7.75021 11.3694 7.71788 11.4713 7.67339C11.5861 7.62327 11.6922 7.55252 11.9044 7.41102L15.5834 4.95837M4.81675 14.1667H12.1834C13.3735 14.1667 13.9686 14.1667 14.4231 13.9351C14.823 13.7314 15.1481 13.4063 15.3518 13.0064C15.5834 12.5519 15.5834 11.9568 15.5834 10.7667V6.23337C15.5834 5.04326 15.5834 4.44821 15.3518 3.99364C15.1481 3.5938 14.823 3.26872 14.4231 3.06499C13.9686 2.83337 13.3735 2.83337 12.1834 2.83337H4.81675C3.62664 2.83337 3.03158 2.83337 2.57702 3.06499C2.17717 3.26872 1.85209 3.5938 1.64836 3.99364C1.41675 4.44821 1.41675 5.04326 1.41675 6.23337V10.7667C1.41675 11.9568 1.41675 12.5519 1.64836 13.0064C1.85209 13.4063 2.17717 13.7314 2.57702 13.9351C3.03158 14.1667 3.62664 14.1667 4.81675 14.1667Z"
+                                stroke="#662D91" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="mx-2">
+                              <p class="payout-alert-0">Payout alert</p>
+                              <p class="transparent-text notification-date-0">14th dec 2023</p>
+                            </div>
+                          </div>
+                          <svg class=" arrow-down-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                          <svg class="d-none arrow-up-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 20 20" fill="none">
+                            <path d="M5 12.5L10 7.5L15 12.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapse-0" class="collapse" aria-labelledby="heading-0" data-parent="#accordionExample">
+                      <div class="card-body">
+                        This is to info you that a payout has been done to your account
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="heading-1">
+                      <h2 class="mb-0">
+                        <button class="btn d-flex justify-content-between  btn-block text-left  btn-notification"
+                          type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="true"
+                          aria-controls="collapse-1">
+                          <div class="d-flex ">
+
+                            <svg class="mt-1 close-envelope-1" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                              viewBox="0 0 17 17" fill="none">
+                              <path
+                                d="M9.73539 1.86543L15.0677 5.33145C15.2562 5.45392 15.3504 5.51516 15.4186 5.59684C15.479 5.66915 15.5244 5.75279 15.5521 5.84285C15.5834 5.9446 15.5834 6.05696 15.5834 6.28169V11.475C15.5834 12.6651 15.5834 13.2601 15.3518 13.7147C15.1481 14.1146 14.823 14.4396 14.4231 14.6434C13.9686 14.875 13.3735 14.875 12.1834 14.875H4.81675C3.62664 14.875 3.03158 14.875 2.57702 14.6434C2.17717 14.4396 1.85209 14.1146 1.64836 13.7147C1.41675 13.2601 1.41675 12.6651 1.41675 11.475V6.28169C1.41675 6.05696 1.41675 5.9446 1.44804 5.84285C1.47573 5.75279 1.52112 5.66915 1.58154 5.59684C1.6498 5.51516 1.74401 5.45393 1.93243 5.33145L7.26477 1.86543M9.73539 1.86543C9.28826 1.57479 9.06469 1.42947 8.82381 1.37293C8.61088 1.32295 8.38928 1.32295 8.17635 1.37293C7.93547 1.42947 7.71191 1.57479 7.26477 1.86543M9.73539 1.86543L14.8525 5.19153C15.0961 5.34987 15.2179 5.42905 15.2601 5.52945C15.2969 5.6172 15.2969 5.71609 15.2601 5.80383C15.2179 5.90424 15.0961 5.98341 14.8525 6.14176L9.73539 9.46786C9.28826 9.75849 9.06469 9.90381 8.82381 9.96035C8.61088 10.0103 8.38928 10.0103 8.17635 9.96035C7.93547 9.90381 7.7119 9.7585 7.26477 9.46786L2.1477 6.14176C1.90409 5.98341 1.78228 5.90424 1.74009 5.80383C1.70323 5.71609 1.70323 5.6172 1.74009 5.52945C1.78228 5.42905 1.90409 5.34987 2.1477 5.19153L7.26477 1.86543"
+                                stroke="#222222" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg class="mt-1 d-none open-envelope-1" xmlns="http://www.w3.org/2000/svg" width="17"
+                              height="17" viewBox="0 0 17 17" fill="none">
+                              <path
+                                d="M1.41675 4.95837L5.09572 7.41102C5.30797 7.55252 5.41409 7.62327 5.5289 7.67339C5.63081 7.71788 5.7376 7.75021 5.84707 7.76972C5.9704 7.79171 6.09795 7.79171 6.35304 7.79171H10.6471C10.9022 7.79171 11.0298 7.79171 11.1531 7.76972C11.2626 7.75021 11.3694 7.71788 11.4713 7.67339C11.5861 7.62327 11.6922 7.55252 11.9044 7.41102L15.5834 4.95837M4.81675 14.1667H12.1834C13.3735 14.1667 13.9686 14.1667 14.4231 13.9351C14.823 13.7314 15.1481 13.4063 15.3518 13.0064C15.5834 12.5519 15.5834 11.9568 15.5834 10.7667V6.23337C15.5834 5.04326 15.5834 4.44821 15.3518 3.99364C15.1481 3.5938 14.823 3.26872 14.4231 3.06499C13.9686 2.83337 13.3735 2.83337 12.1834 2.83337H4.81675C3.62664 2.83337 3.03158 2.83337 2.57702 3.06499C2.17717 3.26872 1.85209 3.5938 1.64836 3.99364C1.41675 4.44821 1.41675 5.04326 1.41675 6.23337V10.7667C1.41675 11.9568 1.41675 12.5519 1.64836 13.0064C1.85209 13.4063 2.17717 13.7314 2.57702 13.9351C3.03158 14.1667 3.62664 14.1667 4.81675 14.1667Z"
+                                stroke="#662D91" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="mx-1">
+                              <p class="payout-alert-1">Payout alert</p>
+                              <p class="transparent-text notification-date-1">14th dec 2023</p>
+                            </div>
+                          </div>
+                          <svg class=" arrow-down-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                          <svg class="d-none arrow-up-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 20 20" fill="none">
+                            <path d="M5 12.5L10 7.5L15 12.5" stroke="#222222" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordionExample">
+                      <div class="card-body">
+                        This is to info you that a payout has been done to your account
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+            <!-- Notification modal ends here -->
+
           </li>
           <li class="nav-item mx-3 dropdown">
             <div class="d-flex user-container align-items-center" type="button" data-toggle="dropdown">
@@ -149,7 +253,37 @@
         <img class="img-fluid" src="./assets/images/menu-burger.svg" alt="" />
       </button>
 
-      <div id="my-nav" class="collapse navbar-collapse mobile-menu-collapse pl-0 pt-4">
+      <div id="my-nav" class="collapse navbar-collapse mobile-menu-collapse p-3 ">
+        <div class="d-flex justify-content-between align-items-start">
+          <img class="w-50" src="./assets/images/logo-white.svg" alt="">
+          <button class="btn" data-target="#my-nav" data-toggle="collapse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <g clip-path="url(#clip0_827_96)">
+                <path
+                  d="M14.7095 12.5002L24.5424 2.66834C25.1528 2.05796 25.1528 1.06835 24.5424 0.458026C23.9321 -0.15235 22.9425 -0.15235 22.3321 0.458026L12.5002 10.2909L2.66834 0.458026C2.05796 -0.15235 1.06835 -0.15235 0.458026 0.458026C-0.152301 1.0684 -0.15235 2.05801 0.458026 2.66834L10.2909 12.5002L0.458026 22.3321C-0.15235 22.9425 -0.15235 23.9321 0.458026 24.5424C1.0684 25.1528 2.05801 25.1528 2.66834 24.5424L12.5002 14.7095L22.3321 24.5424C22.9425 25.1528 23.9321 25.1528 24.5424 24.5424C25.1528 23.9321 25.1528 22.9425 24.5424 22.3321L14.7095 12.5002Z"
+                  fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_827_96">
+                  <rect width="25" height="25" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+
+        <div class="my-4">
+
+          <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 21L11.8999 20.8499C11.2053 19.808 10.858 19.287 10.3991 18.9098C9.99286 18.5759 9.52476 18.3254 9.02161 18.1726C8.45325 18 7.82711 18 6.57482 18H5.2C4.07989 18 3.51984 18 3.09202 17.782C2.71569 17.5903 2.40973 17.2843 2.21799 16.908C2 16.4802 2 15.9201 2 14.8V6.2C2 5.07989 2 4.51984 2.21799 4.09202C2.40973 3.71569 2.71569 3.40973 3.09202 3.21799C3.51984 3 4.07989 3 5.2 3H5.6C7.84021 3 8.96031 3 9.81596 3.43597C10.5686 3.81947 11.1805 4.43139 11.564 5.18404C12 6.03968 12 7.15979 12 9.4M12 21V9.4M12 21L12.1001 20.8499C12.7947 19.808 13.142 19.287 13.6009 18.9098C14.0071 18.5759 14.4752 18.3254 14.9784 18.1726C15.5467 18 16.1729 18 17.4252 18H18.8C19.9201 18 20.4802 18 20.908 17.782C21.2843 17.5903 21.5903 17.2843 21.782 16.908C22 16.4802 22 15.9201 22 14.8V6.2C22 5.07989 22 4.51984 21.782 4.09202C21.5903 3.71569 21.2843 3.40973 20.908 3.21799C20.4802 3 19.9201 3 18.8 3H18.4C16.1598 3 15.0397 3 14.184 3.43597C13.4314 3.81947 12.8195 4.43139 12.436 5.18404C12 6.03968 12 7.15979 12 9.4"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="ml-2 text-light">Resources</span>
+          </p>
+        </div>
+
+        <button class="mt-5 btn default-background text-center w-100">logout</button>
 
       </div>
     </nav>
@@ -407,6 +541,35 @@
     });
       // });
   </script> -->
+
+
+  <!-- This script toggles classes for the notification modal -->
+  <script>
+    $(document).ready(function () {
+      // $(".btn-notification").click(function () {
+      //   $(".close-envelope").toggleClass("d-none");
+      //   $(".open-envelope").toggleClass("d-none");
+      //   $(".payout-alert").toggleClass("tertiary-text-color");
+      //   $(".notification-date").toggleClass("transparent-text");
+      //   $(".arrow-down").toggleClass("d-none");
+      //   $(".arrow-up").toggleClass("d-none");
+      //   console.log("clicked notification");
+      // });
+
+
+      $('.btn-notification').each(function (i, obj) {
+        $(this).click(function () {
+          $(`.close-envelope-${i}`).toggleClass("d-none");
+          $(`.open-envelope-${i}`).toggleClass("d-none");
+          $(`.payout-alert-${i}`).toggleClass("tertiary-text-color");
+          $(`.notification-date-${i}`).toggleClass("transparent-text");
+          $(`.arrow-down-${i}`).toggleClass("d-none");
+          $(`.arrow-up-${i}`).toggleClass("d-none");
+          console.log(i);
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
