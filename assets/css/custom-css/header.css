@@ -85,6 +85,9 @@ header nav {
 .custom-font-size-26 {
   font-size: 26px;
 }
+.custom-font-size-30 {
+  font-size: 30px;
+}
 
 /* END CUSTOM FONT SIZES */
 
@@ -129,6 +132,14 @@ header nav {
 
 .secondary-text-color {
   color: #7d8993;
+}
+
+.tertiary-text-color {
+  color: #64318a;
+}
+
+.transparent-text {
+  color: #e1e2e4;
 }
 
 .divider {
@@ -250,7 +261,7 @@ p {
 
 .mobile-menu-collapse {
   z-index: 99999;
-  background-color: #f6f7f8;
+  background-color: #662d91;
 }
 
 .logout-dropdown {
