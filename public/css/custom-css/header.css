@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "inter", sans-serif;
 }
 
 header nav {
@@ -60,12 +60,14 @@ header nav {
 }
 
 /* START CUSTOM FONT SIZES */
-.custom-font-size-14 {
-  font-size: 14px;
+.custom-font-size-12 {
+  font-size: 12px;
 }
-
 .custom-font-size-13 {
   font-size: 13px;
+}
+.custom-font-size-14 {
+  font-size: 14px;
 }
 
 .custom-font-size-18 {
@@ -76,8 +78,15 @@ header nav {
   font-size: 22px;
 }
 
+.custom-font-size-24 {
+  font-size: 24px;
+}
+
 .custom-font-size-26 {
   font-size: 26px;
+}
+.custom-font-size-30 {
+  font-size: 30px;
 }
 
 /* END CUSTOM FONT SIZES */
@@ -113,18 +122,35 @@ header nav {
   color: #222224;
 }
 
+.default-background-border {
+  border: 2px solid #e9e9e9;
+}
+
 .primary-text-color {
-  color: #662d91;
+  color: #222222;
 }
 
 .secondary-text-color {
   color: #7d8993;
 }
 
+.tertiary-text-color {
+  color: #64318a;
+}
+
+.transparent-text {
+  color: #e1e2e4;
+}
+
 .divider {
   width: 100%;
   height: 0px;
   border: 1px solid #ccccd3;
+}
+.divider-2 {
+  width: 100%;
+  height: 0px;
+  border: 0.5px solid #e9e9e9;
 }
 
 .divider-vertical {
@@ -178,6 +204,7 @@ p {
 
 .user-container {
   position: relative;
+  cursor: pointer;
 }
 
 .nav-bottom-color {
@@ -234,7 +261,7 @@ p {
 
 .mobile-menu-collapse {
   z-index: 99999;
-  background-color: #f6f7f8;
+  background-color: #662d91;
 }
 
 .logout-dropdown {
@@ -333,6 +360,35 @@ p {
   border: 1.3px solid #a6a299;
   padding: 4.5px;
 }
+.portfolio-number-active {
+  color: #222222;
+  border-radius: 7px;
+  border: 1.3px solid #222222;
+  padding: 4.5px;
+}
+
+.custom-btn-danger {
+  background-color: #ec0b0b;
+  border-radius: 30px;
+  padding: 4px 9px;
+  color: #f2f2f2;
+}
+
+.custom-btn-success {
+  background-color: #138e3d;
+  border-radius: 30px;
+  padding: 4px 9px;
+  color: #f2f2f2;
+}
+
+.filter:hover {
+  background-color: #662d91;
+  color: #ffffff;
+}
+
+.page-link {
+  color: #16161d;
+}
 
 /*****MEDIA QUERY****/
 
@@ -407,6 +463,9 @@ p {
   .dashboard-active {
     border-left: 3px solid #64318a;
     border-bottom: 0;
+  }
+  .side-bar {
+    flex-direction: row;
   }
 }
 

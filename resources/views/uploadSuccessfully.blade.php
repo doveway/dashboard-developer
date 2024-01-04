@@ -19,9 +19,7 @@
     rel="stylesheet">
 
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="{{ URL::asset('fontawesome/css/fontawesome.css'); }}" rel="stylesheet" />
   <link href="{{ URL::asset('fontawesome/css/brands.css'); }}" rel="stylesheet" />
   <link href="{{ URL::asset('fontawesome/css/solid.css'); }}" rel="stylesheet" />
@@ -30,8 +28,8 @@
   <link rel="stylesheet" href="{{ URL::asset('css/custom-css/header.css'); }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/custom-css/footer.css'); }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/custom-css/index.css'); }}" />
-
-  <title>Dashboard - Developer Login</title>
+  
+  <title>Dashboard - Developer add-project</title>
 </head>
 
 <body class="body">
@@ -84,14 +82,29 @@
               </svg>
             </a>
           </li>
-          <li class="nav-item mx-3">
-            <div class="d-flex user-container">
+          <li class="nav-item mx-3 dropdown">
+            <div class="d-flex user-container align-items-center" type="button" data-toggle="dropdown">
               <div class="user-shorthand d-flex justify-content-center align-items-center mr-2">
                 <p class="m-0">JD</p>
                 <div class="active-user"></div>
               </div>
               <div class="user-name">
                 <p>JD</p>
+              </div>
+              <i class="fa-solid fa-angle-down"></i>
+              <div class="dropdown-menu" style="left: unset; right: 0">
+                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M10.0001 17.5L9.9167 17.3749C9.33783 16.5066 9.0484 16.0725 8.666 15.7582C8.32746 15.4799 7.93739 15.2712 7.51809 15.1438C7.04446 15 6.52267 15 5.4791 15H4.33341C3.39999 15 2.93328 15 2.57676 14.8183C2.26316 14.6586 2.00819 14.4036 1.8484 14.09C1.66675 13.7335 1.66675 13.2668 1.66675 12.3333V5.16667C1.66675 4.23325 1.66675 3.76654 1.8484 3.41002C2.00819 3.09641 2.26316 2.84144 2.57676 2.68166C2.93328 2.5 3.39999 2.5 4.33341 2.5H4.66675C6.53359 2.5 7.46701 2.5 8.18005 2.86331C8.80726 3.18289 9.31719 3.69282 9.63677 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333M10.0001 17.5V7.83333M10.0001 17.5L10.0835 17.3749C10.6623 16.5066 10.9518 16.0725 11.3342 15.7582C11.6727 15.4799 12.0628 15.2712 12.4821 15.1438C12.9557 15 13.4775 15 14.5211 15H15.6667C16.6002 15 17.0669 15 17.4234 14.8183C17.737 14.6586 17.992 14.4036 18.1518 14.09C18.3334 13.7335 18.3334 13.2668 18.3334 12.3333V5.16667C18.3334 4.23325 18.3334 3.76654 18.1518 3.41002C17.992 3.09641 17.737 2.84144 17.4234 2.68166C17.0669 2.5 16.6002 2.5 15.6667 2.5H15.3334C13.4666 2.5 12.5332 2.5 11.8201 2.86331C11.1929 3.18289 10.683 3.69282 10.3634 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333"
+                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg><span>&nbsp;&nbsp;&nbsp;Resources</span></a>
+                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5M7.5 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H7.5"
+                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg><span>&nbsp;&nbsp;&nbsp;Logout</span></a>
               </div>
             </div>
           </li>
@@ -107,7 +120,7 @@
       </button> -->
       <div style="width: 32.5%" class="">
         <a href="index.html">
-          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
+          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/images/bss-logo.svg'); }}"
             alt="logo" />
         </a>
       </div>
@@ -130,7 +143,7 @@
 
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
         aria-expanded="false" aria-label="Toggle navigation">
-        <img class="img-fluid" src="{{ URL::asset('images/menu-burger.svg'); }}" alt="" />
+        <img class="img-fluid" src="{{ URL::asset('images/images/menu-burger.svg'); }}" alt="" />
       </button>
 
       <div id="my-nav" class="collapse navbar-collapse mobile-menu-collapse pl-0 pt-4">
@@ -142,20 +155,21 @@
 
   <main class="container-fluid d-flex flex-column " style="flex: 1">
     <div class="row pt-md-5 pt-2">
-      <div class="col-md-3 col-12 ">
-        <div class="d-flex align-items-center side-bar">
+      <!-- side-bar start here -->
+      <div class="col-lg-3 col-md-12 col-12">
+        <div class="d-flex justify-content-between align-items-center side-bar">
           <div class="developer-logo">
-            <img src="{{ URL::asset('images/terra-logo.png'); }}" alt="">
+            <img src="{{ URL::asset('images/images/terra-logo.png'); }}" alt="">
           </div>
           <div class="developer-name my-3">
-            <p>{{$developerName}}</p>
+            <p>Tera Developers</p>
           </div>
           <div class="developer-stats d-flex py-2 px-4 ">
             <table>
               <tr class="text-center font-weight-bold">
-                <td>{{$proptyCount}}</td>
-                <td>{{$totalActive}}</td>
-                <td>{{$totalSold}}</td>
+                <td>112</td>
+                <td>30</td>
+                <td>80</td>
               </tr>
 
               <tr class="text-center">
@@ -165,13 +179,13 @@
               </tr>
             </table>
           </div>
-          <div class="d-md-block d-none my-4">
+          <div class="d-lg-block d-none my-4">
             <div>
-              <button class="btn primary-background default-border-radius" type="button"> <svg
+              <a href="#" class="btn primary-background default-border-radius" type="button"> <svg
                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-                </svg> Add Project</button>
+                </svg> Add Project</a>
             </div>
 
             <div class="divider mt-5 mb-3"></div>
@@ -182,28 +196,29 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8  col-12">
+
+      <!-- main body starts here -->
+      <div class="col-lg-8  col-md-12 col-12">
         <div class="my-md-0 my-4">
-          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/hand.svg'); }}"
+          <p style="font-weight: 600; font-size: 20px;">Welcome, Terra Developers <img src="{{ URL::asset('images/images/hand.svg'); }}"
               alt=""> </p>
           <p class="custom-font-size-13">Manage all your portfolio on the BuySmallsmall platform</p>
         </div>
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  sub-menu--dashboard-active"
-              href="property-portfolio.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M7 13.125V14.875M10.5 9.625V14.875M14 6.125V14.875M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#A6A299" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio Stats</span>
               </div>
             </a>
 
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="portfolio.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
@@ -211,10 +226,10 @@
                     stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio</span>
-                <span class="portfolio-number ml-2">{{$proptyCount}}</span>
+                <span class="portfolio-number ml-2">112</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="receivables.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -224,137 +239,46 @@
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active"
+              href="add-project1.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M10.5 7V14M7 10.5H14M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Add Project</span>
               </div>
             </a>
           </div>
         </div>
+
         <div class="row my-4">
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Portfolio</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path
-                      d="M1 12.9292L12.5707 18.7145C12.7281 18.7932 12.8068 18.8326 12.8894 18.8481C12.9625 18.8618 13.0375 18.8618 13.1106 18.8481C13.1932 18.8326 13.2719 18.7932 13.4293 18.7145L25 12.9292M1 18.9292L12.5707 24.7145C12.7281 24.7932 12.8068 24.8326 12.8894 24.8481C12.9625 24.8618 13.0375 24.8618 13.1106 24.8481C13.1932 24.8326 13.2719 24.7932 13.4293 24.7145L25 18.9292M1 6.92918L12.5707 1.14384C12.7281 1.06513 12.8068 1.02578 12.8894 1.01029C12.9625 0.99657 13.0375 0.99657 13.1106 1.01029C13.1932 1.02578 13.2719 1.06513 13.4293 1.14384L25 6.92918L13.4293 12.7145C13.2719 12.7932 13.1932 12.8326 13.1106 12.8481C13.0375 12.8618 12.9625 12.8618 12.8894 12.8481C12.8068 12.8326 12.7281 12.7932 12.5707 12.7145L1 6.92918Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">{{number_format($proptyCount)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
+          <div class=" col-12 my-3 d-flex justify-content-center">
+            <div class="default-background p-5  d-flex flex-column justify-content-center align-items-center">
+              <p class="custom-font-size-30  font-weight-bold my-3">Project Uploaded Successful</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <path
+                  d="M15.6253 25L21.8753 31.25L34.3753 18.75M45.8337 25C45.8337 36.506 36.5063 45.8334 25.0003 45.8334C13.4944 45.8334 4.16699 36.506 4.16699 25C4.16699 13.4941 13.4944 4.16669 25.0003 4.16669C36.5063 4.16669 45.8337 13.4941 45.8337 25Z"
+                  stroke="#662D91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </div>
-          </div>
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Unit locked</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M13 7L11.8845 4.76892C11.5634 4.1268 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.0799 2 6.2V7M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7ZM10.1 17.5H13.9C14.4601 17.5 14.7401 17.5 14.954 17.391C15.1422 17.2951 15.2951 17.1422 15.391 16.954C15.5 16.7401 15.5 16.4601 15.5 15.9V15.1C15.5 14.5399 15.5 14.2599 15.391 14.046C15.2951 13.8578 15.1422 13.7049 14.954 13.609C14.7401 13.5 14.4601 13.5 13.9 13.5H10.1C9.53995 13.5 9.25992 13.5 9.04601 13.609C8.85785 13.7049 8.70487 13.8578 8.60899 14.046C8.5 14.2599 8.5 14.5399 8.5 15.1V15.9C8.5 16.4601 8.5 16.7401 8.60899 16.954C8.70487 17.1422 8.85785 17.2951 9.04601 17.391C9.25992 17.5 9.53995 17.5 10.1 17.5ZM13.75 13.5V11.75C13.75 10.7835 12.9665 10 12 10C11.0335 10 10.25 10.7835 10.25 11.75V13.5H13.75Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">{{number_format($totalLocked)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Receivbles</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 7H14C17.3137 7 20 9.68629 20 13C20 16.3137 17.3137 19 14 19H4M4 7L8 3M4 7L8 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;{{number_format($totalReceivable)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Payout</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 7H10C6.68629 7 4 9.68629 4 13C4 16.3137 6.68629 19 10 19H20M20 7L16 3M20 7L16 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;{{number_format($totalPayout)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Outstanding Receivables</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M14 10L21 3M21 3H15M21 3V9M10 14L3 21M3 21H9M3 21L3 15" stroke="#222222" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;{{number_format($outstndngReceivables)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          </div>
+          <div class="col-12 d-flex my-3 justify-content-center">
+            <a class="btn primary-background" href="add-project1.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>&nbsp;&nbsp;Add more Project
+            </a>
           </div>
 
 
         </div>
+
       </div>
     </div>
   </main>

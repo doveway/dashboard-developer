@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="assets/images/bss-favicon.png" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}"/>
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,9 +19,7 @@
     rel="stylesheet">
 
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="{{ URL::asset('fontawesome/css/fontawesome.css'); }}" rel="stylesheet" />
   <link href="{{ URL::asset('fontawesome/css/brands.css'); }}" rel="stylesheet" />
   <link href="{{ URL::asset('fontawesome/css/solid.css'); }}" rel="stylesheet" />
@@ -29,9 +27,13 @@
   <!-- custom CSS -->
   <link rel="stylesheet" href="{{ URL::asset('css/custom-css/header.css'); }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/custom-css/footer.css'); }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/index.css'); }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/portfolio.css'); }}" />
+  
+  <!-- DropZone library for drag and drop -->
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
-  <title>Dashboard - Developer Login</title>
+  <title>Portfolio - uploaded </title>
 </head>
 
 <body class="body">
@@ -142,6 +144,7 @@
 
   <main class="container-fluid d-flex flex-column " style="flex: 1">
     <div class="row pt-md-5 pt-2">
+      <!-- side-bar start here -->
       <div class="col-md-3 col-12 ">
         <div class="d-flex align-items-center side-bar">
           <div class="developer-logo">
@@ -167,11 +170,11 @@
           </div>
           <div class="d-md-block d-none my-4">
             <div>
-              <button class="btn primary-background default-border-radius" type="button"> <svg
+              <a href="#" class="btn primary-background default-border-radius" type="button"> <svg
                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-                </svg> Add Project</button>
+                </svg> Add Project</a>
             </div>
 
             <div class="divider mt-5 mb-3"></div>
@@ -182,6 +185,8 @@
           </div>
         </div>
       </div>
+
+      <!-- main body starts here -->
       <div class="col-md-8  col-12">
         <div class="my-md-0 my-4">
           <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/hand.svg'); }}"
@@ -191,30 +196,29 @@
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  sub-menu--dashboard-active"
-              href="property-portfolio.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M7 13.125V14.875M10.5 9.625V14.875M14 6.125V14.875M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#A6A299" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio Stats</span>
               </div>
             </a>
 
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active" href="#">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
                     d="M1 11.438L11.1243 16.5002C11.2621 16.5691 11.331 16.6035 11.4032 16.6171C11.4672 16.6291 11.5328 16.6291 11.5968 16.6171C11.669 16.6035 11.7379 16.5691 11.8757 16.5002L22 11.438M1 16.688L11.1243 21.7502C11.2621 21.8191 11.331 21.8535 11.4032 21.8671C11.4672 21.8791 11.5328 21.8791 11.5968 21.8671C11.669 21.8535 11.7379 21.8191 11.8757 21.7502L22 16.688M1 6.18803L11.1243 1.12586C11.2621 1.05699 11.331 1.02256 11.4032 1.009C11.4672 0.996999 11.5328 0.996999 11.5968 1.009C11.669 1.02256 11.7379 1.05699 11.8757 1.12586L22 6.18803L11.8757 11.2502C11.7379 11.3191 11.669 11.3535 11.5968 11.3671C11.5328 11.3791 11.4672 11.3791 11.4032 11.3671C11.331 11.3535 11.2621 11.3191 11.1243 11.2502L1 6.18803Z"
-                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio</span>
-                <span class="portfolio-number ml-2">{{$proptyCount}}</span>
+                <span class="portfolio-number-active ml-2 ">{{$proptyCount}}</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -224,7 +228,7 @@
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="payments.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 " href="add-project1.html">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -236,123 +240,92 @@
             </a>
           </div>
         </div>
+
         <div class="row my-4">
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Portfolio</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path
-                      d="M1 12.9292L12.5707 18.7145C12.7281 18.7932 12.8068 18.8326 12.8894 18.8481C12.9625 18.8618 13.0375 18.8618 13.1106 18.8481C13.1932 18.8326 13.2719 18.7932 13.4293 18.7145L25 12.9292M1 18.9292L12.5707 24.7145C12.7281 24.7932 12.8068 24.8326 12.8894 24.8481C12.9625 24.8618 13.0375 24.8618 13.1106 24.8481C13.1932 24.8326 13.2719 24.7932 13.4293 24.7145L25 18.9292M1 6.92918L12.5707 1.14384C12.7281 1.06513 12.8068 1.02578 12.8894 1.01029C12.9625 0.99657 13.0375 0.99657 13.1106 1.01029C13.1932 1.02578 13.2719 1.06513 13.4293 1.14384L25 6.92918L13.4293 12.7145C13.2719 12.7932 13.1932 12.8326 13.1106 12.8481C13.0375 12.8618 12.9625 12.8618 12.8894 12.8481C12.8068 12.8326 12.7281 12.7932 12.5707 12.7145L1 6.92918Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">{{number_format($proptyCount)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Unit locked</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M13 7L11.8845 4.76892C11.5634 4.1268 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.0799 2 6.2V7M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7ZM10.1 17.5H13.9C14.4601 17.5 14.7401 17.5 14.954 17.391C15.1422 17.2951 15.2951 17.1422 15.391 16.954C15.5 16.7401 15.5 16.4601 15.5 15.9V15.1C15.5 14.5399 15.5 14.2599 15.391 14.046C15.2951 13.8578 15.1422 13.7049 14.954 13.609C14.7401 13.5 14.4601 13.5 13.9 13.5H10.1C9.53995 13.5 9.25992 13.5 9.04601 13.609C8.85785 13.7049 8.70487 13.8578 8.60899 14.046C8.5 14.2599 8.5 14.5399 8.5 15.1V15.9C8.5 16.4601 8.5 16.7401 8.60899 16.954C8.70487 17.1422 8.85785 17.2951 9.04601 17.391C9.25992 17.5 9.53995 17.5 10.1 17.5ZM13.75 13.5V11.75C13.75 10.7835 12.9665 10 12 10C11.0335 10 10.25 10.7835 10.25 11.75V13.5H13.75Z"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">{{number_format($totalLocked)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+
+          <div class="col-12">
+            <nav class="nav">
+              <li class="nav-item mr-3 ">
+                <a class="nav-link primary-text-color  sub-menu--dashboard-active px-0" id="uploadedPortfolioBtn"
+                  href="#" role="button">Uploaded Portfolio</a>
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link secondary-text-color px-0 " id="shareCertificateBtn" href="#" role="button">Live
+                  Portfolio</a>
+              </li>
+            </nav>
           </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Receivbles</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 7H14C17.3137 7 20 9.68629 20 13C20 16.3137 17.3137 19 14 19H4M4 7L8 3M4 7L8 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
+          <!-- Uploaded Portfolio -->
+          <div class="col-12 mt-5 collapse show" id="uploadedPortfolio">
+
+            <div class="row">
+              
+            @foreach($totResults as $totResult)
+              <div class="col-12 col-md-6">
+                <div class="portfolio-container p-3">
+
+                  <div class="d-flex justify-content-between">
+                    <div class="project-details d-flex justify-content-center">
+                      <img src="{{ URL::asset('images/project-img.jpeg'); }}" alt="" style="width: 40px; height: 40px"
+                        class="rounded-circle">
+                      <div class="ml-2">
+                        <p class="custom-font-size-12">Project name</p>
+                        <p class="font-weight-bold">{{$totResult->project_name}}</p>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="action-icon" data-toggle="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                          <path
+                            d="M15.5697 12.7753C15.5697 13.328 15.4058 13.8683 15.0987 14.3279C14.7916 14.7875 14.3552 15.1457 13.8445 15.3572C13.3339 15.5687 12.772 15.624 12.2299 15.5162C11.6878 15.4084 11.1898 15.1422 10.799 14.7514C10.4082 14.3605 10.142 13.8626 10.0342 13.3205C9.92634 12.7784 9.98168 12.2165 10.1932 11.7059C10.4047 11.1952 10.7629 10.7588 11.2225 10.4517C11.682 10.1446 12.2223 9.98071 12.7751 9.98071C13.5162 9.98071 14.2271 10.2751 14.7511 10.7992C15.2752 11.3233 15.5697 12.0341 15.5697 12.7753ZM12.7751 7.58534C13.3278 7.58534 13.8681 7.42144 14.3277 7.11437C14.7872 6.80729 15.1454 6.37084 15.3569 5.86019C15.5684 5.34955 15.6238 4.78765 15.516 4.24555C15.4081 3.70345 15.142 3.2055 14.7511 2.81467C14.3603 2.42384 13.8624 2.15768 13.3203 2.04985C12.7782 1.94202 12.2163 1.99737 11.7056 2.20888C11.195 2.4204 10.7585 2.77859 10.4514 3.23816C10.1444 3.69773 9.98047 4.23803 9.98047 4.79075C9.98047 5.53192 10.2749 6.24274 10.799 6.76682C11.3231 7.29091 12.0339 7.58534 12.7751 7.58534ZM12.7751 17.9653C12.2223 17.9653 11.682 18.1292 11.2225 18.4362C10.7629 18.7433 10.4047 19.1798 10.1932 19.6904C9.98168 20.2011 9.92634 20.763 10.0342 21.305C10.142 21.8471 10.4082 22.3451 10.799 22.7359C11.1898 23.1268 11.6878 23.3929 12.2299 23.5007C12.772 23.6086 13.3339 23.5532 13.8445 23.3417C14.3552 23.1302 14.7916 22.772 15.0987 22.3124C15.4058 21.8529 15.5697 21.3126 15.5697 20.7599C15.5697 20.0187 15.2752 19.3079 14.7511 18.7838C14.2271 18.2597 13.5162 17.9653 12.7751 17.9653Z"
+                            fill="#A8A8BD" />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu custom-dropdown">
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">View</a>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="mx-3">
+                    <div class="divider-2 my-2"></div>
+                    <div class="d-flex flex-wrap">
+                      <div class="mr-3 my-2">
+                        <p class="custom-font-size-12">Location</p>
+                        <p class="custom-font-size-14" style="font-weight: 600;">{{$totResult->city}}</p>
+                      </div>
+                      <div class="mr-3 my-2">
+                        <p class="custom-font-size-12">Number of Units</p>
+                        <p class="custom-font-size-14" style="font-weight: 600;">{{$totResult->unitNumber}}</p>
+                      </div>
+                      <div class="mr-3 my-2">
+                        <p class="custom-font-size-12">Type of Units</p>
+                        <p class="custom-font-size-14" style="font-weight: 600;">{{$totResult->proptyType}}</p>
+                      </div>
+                      <div class="mr-3 my-2">
+                        <p class="custom-font-size-12">Size</p>
+                        <p class="custom-font-size-14" style="font-weight: 600;">{{$totResult->size}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              <div class="stats-number">&#8358;{{number_format($totalReceivable)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
+              <div class="col-6"></div>
+              <div class="col-6"></div>
+              @endforeach
             </div>
+
           </div>
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Total Payout</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 7H10C6.68629 7 4 9.68629 4 13C4 16.3137 6.68629 19 10 19H20M20 7L16 3M20 7L16 11"
-                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;{{number_format($totalPayout)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          <!-- Live Portfolio -->
+          <div class="col-12 mt-5 collapse" id="shareCertificate">
+            Live Portfolio
 
-          <div class="col-md-4 mb-3 col-12 ">
-            <div class="stats-container  py-2 px-3">
-              <div class="d-flex justify-content-between my-1">
-                <p class="custom-font-size-14">Outstanding Receivables</p>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M14 10L21 3M21 3H15M21 3V9M10 14L3 21M3 21H9M3 21L3 15" stroke="#222222" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </p>
-              </div>
-              <div class="stats-number">&#8358;{{number_format($outstndngReceivables)}}</div>
-              <div class="d-flex justify-content-end">
-                <button class="btn primary-background forward-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M3.54175 8.50002H13.4584M13.4584 8.50002L8.50008 3.54169M13.4584 8.50002L8.50008 13.4584"
-                      stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
-
 
         </div>
       </div>
@@ -374,6 +347,139 @@
   <!-- Bootstrap js and Popper js -->
   <script src="{{ URL::asset('js/popper.min.js'); }}" crossorigin="anonymous"></script>
   <script src="{{ URL::asset('js/bootstrap-js/bootstrap.min.js'); }}" crossorigin="anonymous"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $("#uploadedPortfolioBtn").click(function () {
+        $("#uploadedPortfolio").addClass("show");
+        $("#shareCertificate").removeClass("show");
+        $("#history").removeClass("show");
+        $("#shareCertificateBtn").addClass("secondary-text-color")
+        $("#shareCertificateBtn").removeClass("primary-text-color sub-menu--dashboard-active")
+        $("#historyBtn").addClass("secondary-text-color")
+        $("#historyBtn").removeClass("primary-text-color sub-menu--dashboard-active")
+        $("#uploadedPortfolioBtn").addClass("primary-text-color sub-menu--dashboard-active")
+        $("#uploadedPortfolioBtn").removeClass("secondary-text-color")
+
+      });
+      $("#shareCertificateBtn").click(function () {
+        $("#shareCertificate").addClass("show");
+        $("#uploadedPortfolio").removeClass("show");
+        $("#history").removeClass("show");
+        $("#shareCertificateBtn").addClass("primary-text-color sub-menu--dashboard-active")
+        $("#shareCertificateBtn").removeClass("secondary-text-color")
+        $("#uploadedPortfolioBtn").removeClass("primary-text-color sub-menu--dashboard-active")
+        $("#uploadedPortfolioBtn").addClass("secondary-text-color")
+        $("#historyBtn").addClass("secondary-text-color")
+        $("#historyBtn").removeClass("primary-text-color sub-menu--dashboard-active")
+
+      });
+
+
+      //Add new another unit type
+      const newUnit = `
+            <div class="row new-unit-form" >
+                <div class="d-flex col-12 py-3 justify-content-end text-danger">
+                  <i class="fa-solid fa-circle-xmark" style="cursor: pointer;" id="closeContact"></i>
+                </div>
+
+                <!-- 1st column of the form -->
+                <div class="col-md-6 col-12">
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Type of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group ">
+                    <select id="inputState" class="form-control input-custom">
+                      <option selected>Number of unit</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control input-custom" placeholder="Size (sqm)">
+                  </div>
+
+                  <div class="mb-4">
+                    <p class="mb-3">Features</p>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="oven" value="option1">
+                      <label class="form-check-label custom-font-size-14" for="oven">Oven</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="gas-hob" value="option2">
+                      <label class="form-check-label custom-font-size-14" for="gas-hob">Gas hob</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="microwave" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="microwave">Microwave</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="AC" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="AC">AC</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                      <input class="form-check-input" type="checkbox" id="washing-machine" value="option3">
+                      <label class="form-check-label custom-font-size-14" for="washing-machine">Washing machine</label>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                </div>
+
+                <!-- 2nd column of the form -->
+                <div class="col-md-6 col-12 mt-md-0 mt-4">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Selling price">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="BSS Special price">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control input-custom" id="exampleFormControlTextarea1"
+                      rows="3">More details ( optional )</textarea>
+                  </div>
+                  <div class="my-dropzone">
+                    <div class="form-group">
+                      <input type="file" class="form-control ">
+                    </div>
+                  </div>
+
+                </div>
+            </div>  
+              
+        
+        `;
+
+      // create a new form
+      $("#add-unit-btn").click(function () {
+        $("#new-unit").append(newUnit)
+      });
+
+
+      // close the new contact form
+      $(document).on('click', '#closeContact', function (e) {
+        $("#closeContact").parents(".new-unit-form ").remove();
+      });
+
+    });
+
+
+  </script>
+
+  <script>
+    // Dropzone has been added as a global variable.
+    const dropzone = new Dropzone("div.my-dropzone", { url: "/file/post" });
+  </script>
 
   <!-- <script>
     // $(document).ready(function () {
