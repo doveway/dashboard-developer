@@ -20,6 +20,34 @@ Route::get('/', function () {
     return view('login');
 });
 
+// Route::get('/portfolioDetail', function () {
+//     return view('portfolioDetail');
+// });
+
 Route::post("/login/check", [UserAuth::class, 'check']);
 
 Route::get("/home", [UserAuth::class, 'index']);
+
+Route::get("/addProject", [UserAuth::class, 'addProject']);
+
+Route::post("/addProjects", [UserAuth::class, 'insertProject']);
+
+Route::get("/portfolio", [UserAuth::class, 'portfolio']);
+
+Route::get("/portfolioDetail/{id}", [UserAuth::class, 'portfolioDetail']);
+
+Route::get("/receivables", [UserAuth::class, 'receivable']);
+
+Route::get("/uploadSuccessfully", [UserAuth::class, 'uploadSuccessfully']);
+
+Route::post("/addProjectType", [UserAuth::class, 'insertProjectType']);
+
+Route::post("/dateFilter", [UserAuth::class, 'dateFilter']);
+
+Route::post("/unitFilter", [UserAuth::class, 'unitFilter']);
+
+Route::post("/addProjectTypes", [UserAuth::class, 'insertProjectTypes']);
+
+// Route::get('/addProject', function () {
+//     return view('addProject');
+// });
