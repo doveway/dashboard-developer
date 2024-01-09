@@ -162,14 +162,14 @@
             <img src="{{ URL::asset('images/images/terra-logo.png'); }}" alt="">
           </div>
           <div class="developer-name my-3">
-            <p>Tera Developers</p>
+            <p>{{$developerName}}</p>
           </div>
           <div class="developer-stats d-flex py-2 px-4 ">
             <table>
               <tr class="text-center font-weight-bold">
-                <td>112</td>
-                <td>30</td>
-                <td>80</td>
+                <td>{{$proptyCount}}</td>
+                <td>{{$totalActive}}</td>
+                <td>{{$totalSold}}</td>
               </tr>
 
               <tr class="text-center">
@@ -200,7 +200,7 @@
       <!-- main body starts here -->
       <div class="col-lg-8  col-md-12 col-12">
         <div class="my-md-0 my-4">
-          <p style="font-weight: 600; font-size: 20px;">Welcome, Terra Developers <img src="{{ URL::asset('images/images/hand.svg'); }}"
+          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/images/hand.svg'); }}"
               alt=""> </p>
           <p class="custom-font-size-13">Manage all your portfolio on the BuySmallsmall platform</p>
         </div>

@@ -639,9 +639,49 @@ class UserAuth extends Controller
             }
         }
 
+        $Locked = 0; $sold = 0;
+
         $sql = "SELECT a.*, b.* FROM developer_property as a, projecttypes as b WHERE a.developer_id = '$developerId' and a.project_id = b.project_id";
 
         $totResults = DB::select($sql);
+
+        $sql = "SELECT a.* FROM developer_property as a WHERE a.developer_id = '$developerId'";
+
+        $totalResults = DB::select($sql);
+
+        foreach($totalResults as $totalResult)
+        {
+            $unit = $totalResult->unit_number;
+            $parent_id = $totalResult->project_id;
+
+            $sql = "SELECT a.* FROM buytolet_property as a WHERE a.parent_id = '$parent_id'";
+
+            $totlResults = DB::select($sql);
+
+            foreach($totlResults as $totlResult)
+            {
+                if($totlResult->availability == 'Locked')
+                {
+                    $Locked += 1;
+                }
+
+                elseif($totlResult->availability == 'sold')
+                {
+                    $sold += 1;
+                }
+            }
+
+            $Available = $unit - $Locked - $sold;
+
+            $sql = "SELECT count(*) as count FROM developer_payout as a WHERE a.property_id = '$parent_id'";
+
+            $customers = DB::select($sql);
+
+            foreach($customers as $customer)
+            {
+                $customerCount = $customer->count;
+            }
+        }
 
         return view("portfolio")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive,  'totResults' => $totResults, 'developerName' => $developerName]);
     }
@@ -738,20 +778,29 @@ class UserAuth extends Controller
                       ->where('buytolet_property.parent_id', '=', $id)
                       ->paginate(2);
 
-        return view("portfolioDetail")->with(['proptyCount' => $proptyCount, 'proptyId' => $id, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'totResults' => $totResults, 'developerName' => $developerName, 'projectName' => $projectName]);
+        $totProptyCount = DB::table('buytolet_property')
+        ->join('buytolet_investment_type', 'buytolet_property.investment_type', '=', 'buytolet_investment_type.id')
+        ->select('buytolet_property.*', 'buytolet_investment_type.type')
+        ->where('buytolet_property.parent_id', '=', $id)
+        ->count();
+
+        return view("portfolioDetail")->with(['proptyCount' => $proptyCount, 'proptyId' => $id, 'totalSold' => $totalSold, 'totalActive' => $totalActive,  'totProptyCount' => $totProptyCount,'totResults' => $totResults, 'developerName' => $developerName, 'projectName' => $projectName]);
     }
 
     public function dateFilter(Request $request)
     {
         $proptyId = $request->property;
+        $limit = $request->limit;
+        $start = $request->start;
+        $limits = $start + $limit;
 
         $totResults = DB::table('buytolet_property')
                       ->join('buytolet_investment_type', 'buytolet_property.investment_type', '=', 'buytolet_investment_type.id')
                       ->select('buytolet_property.*', 'buytolet_investment_type.type')
                       ->where('buytolet_property.parent_id', '=', $proptyId)
                       ->orderBy('buytolet_property.date_of_entry', 'Desc')
-                      ->paginate(2);
-
+                      ->limit($limits, $start)
+                      ->get();
         $output = '';
 
         $output .= '<div id = "historyTable">
@@ -810,26 +859,97 @@ class UserAuth extends Controller
 
         </div>
 
-        '.$totResults->links().'
+      </div>
+      <br></br>
+      <div class="row mb-4">
+        <div style="text-align:center;width:100%;font-size:14px;color:#138E3D" id="inbox-data-loading"> </div>
+        <div class="text-right load-more-bar" onclick ="loadDateMessages()">
+            <a href="#" class="btn secondary-background">Load more</a>
+        </div>
+      </div>';
 
-        <div class="col-12 my-5">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+      echo $output;
+
+    }
+
+    public function unitFilter(Request $request)
+    {
+        $proptyId = $request->property;
+        $limit = $request->limit;
+        $start = $request->start;
+        $limits = $start + $limit;
+
+        $totResults = DB::table('buytolet_property')
+                      ->join('buytolet_investment_type', 'buytolet_property.investment_type', '=', 'buytolet_investment_type.id')
+                      ->select('buytolet_property.*', 'buytolet_investment_type.type')
+                      ->where('buytolet_property.parent_id', '=', $proptyId)
+                      ->orderBy('buytolet_property.price', 'Desc')
+                      ->limit($limits, $start)
+                      ->get();
+        $output = '';
+
+        $output .= '<div id = "historyTable">
+        <div class="col-12 mt-5 " id="history">
+          <div class=" p-3 default-background default-background-border table-responsive">
+            <table class="table custom-font-size-14">
+              <thead class="">
+                <tr>
+                  <th scope="col" class="border-top-0">Property Names</th>
+                  <th scope="col" class="border-top-0">Type of unit</th>
+                  <th scope="col" class="border-top-0">Date listed</th>
+                  <th scope="col" class="border-top-0">Status</th>
+                  <th scope="col" class="border-top-0">Package</th>
+                  <th scope="col" class="border-top-0">Price</th>
+                </tr>
+              </thead>
+              <tbody>';
+                foreach($totResults as $totResult)
+                {
+                    if($totResult->availability == 'sold')
+                    {
+                        $output .= '<tr>
+                        <td>'.$totResult->property_name.'</td>
+                        <td>'.$totResult->bed.' bed</td>
+                        <td>'.$totResult->date_of_entry.'</td>
+                        <td>
+                            <button class="btn custom-font-size-14 custom-btn-danger">Locked</button>  
+                        </td>
+                        <td>
+                            '.$totResult->type.'
+                        </td>
+                        <td>&#8358;'.$totResult->price.'</td>
+                        </tr>';
+                    }
+
+                    else
+                    {
+                        $output .= '<tr>
+                        <td>'.$totResult->property_name.'</td>
+                        <td>'.$totResult->bed.' bed</td>
+                        <td>'.$totResult->date_of_entry.'</td>
+                        <td>
+                            <button class="btn custom-font-size-14 custom-btn-success">Available</button>  
+                        </td>
+                        <td>
+                            '.$totResult->type.'
+                        </td>
+                        <td>&#8358;'.$totResult->price.'</td>
+                        </tr>';                            
+                    }
+                }
+
+              $output .= '</tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+      <br></br>
+      <div class="row mb-4">
+        <div style="text-align:center;width:100%;font-size:14px;color:#138E3D" id="inbox-data-loading"> </div>
+        <div class="text-right load-more-bar" onclick ="loadUnitMessages()">
+            <a href="#" class="btn secondary-background">Load more</a>
         </div>
       </div>';
 
@@ -990,5 +1110,79 @@ class UserAuth extends Controller
                       ->paginate(2);
 
         return view("receivables")->with(['proptyCount' => $proptyCount, 'totalPayout' => $totalPayout, 'outstndngReceivables' => $outstndngReceivables, 'totalActive' => $totalActive, 'count' => $count, 'totalDownPayment' => $totalDownPayment, 'totResults' => $totResults, 'totalSold' => $totalSold,  'developerName' => $developerName]);
+    }
+
+    public function uploadSuccessfully(Request $request)
+    {
+        $developerId = $request->session()->get('developerID');
+
+        $users = Developer::where('developer_id', $developerId)->get();
+
+        foreach($users as $user)
+        {
+            $developerName = $user['company_name'];
+        }
+
+        $proptyCount = 0;
+
+        $sql = "SELECT * FROM `developer_property` WHERE developer_id = '$developerId'";
+
+        $results = DB::select($sql);
+
+        foreach($results as $result)
+        {
+            $projctId = $result->project_id;
+
+            $sql = "SELECT * FROM `buytolet_property` WHERE parent_id = '$projctId'";
+
+            $projects = DB::select($sql);
+
+            foreach($projects as $project)
+            {
+                $proptyCount += 1; 
+            }
+        }
+
+        $totalSold = 0;
+
+        $totalActive = 0;
+
+        $sql = "SELECT * FROM `developer_property` WHERE developer_id = '$developerId'";
+
+        $results = DB::select($sql);
+
+        foreach($results as $result)
+        {
+            $projctId = $result->project_id;
+
+            $sql = "SELECT * FROM `buytolet_property` WHERE parent_id = '$projctId' and active = 1";
+
+            $projects = DB::select($sql);
+
+            foreach($projects as $project)
+            {
+                $totalActive += 1; 
+            }
+        }
+
+        $sql = "SELECT * FROM `developer_property` WHERE developer_id = '$developerId'";
+
+        $results = DB::select($sql);
+
+        foreach($results as $result)
+        {
+            $projctId = $result->project_id;
+
+            $sql = "SELECT * FROM `buytolet_property` WHERE parent_id = '$projctId' and availability = 'sold'";
+
+            $projects = DB::select($sql);
+
+            foreach($projects as $project)
+            {
+                $totalSold += 1; 
+            }
+        }
+
+        return view("uploadSuccessfully")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
     }
 }

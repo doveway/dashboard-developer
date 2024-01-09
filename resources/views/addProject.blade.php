@@ -856,6 +856,7 @@
                     document.getElementById("addProject2").style.display="none";
                     document.getElementById("addNew").style.display="block";
                     document.getElementById("nextUnit").style.display="none";
+                    window.location.replace('/uploadSuccessfully');
                     alert('Project successfully added');
                   }
 
@@ -957,6 +958,7 @@
                     document.getElementById("addProject3").style.display="none";
                     document.getElementById("addNew").style.display="block";
                     document.getElementById("nextUnit").style.display="none";
+                    window.location.replace('/uploadSuccessfully');
                     alert('Project successfully added');
                   }
 

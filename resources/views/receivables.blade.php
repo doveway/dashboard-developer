@@ -44,7 +44,7 @@
     <!-- desktop menu bar -->
     <nav class="navbar navbar-expand-lg nav-bottom-color navbar-light px-4 py-0 d-lg-flex d-none">
       <a class="navbar-brand" href="index.html">
-        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}
+        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
           alt="logo" />
       </a>
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
@@ -319,32 +319,40 @@
             </div>
 
           </div>
-          {{$totResults->links()}}
-          <div class="col-12 my-5">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <br></br>
+          
+        </div>
 
+        <div>
+          {{$totResults->links()}}
         </div>
 
       </div>
     </div>
   </main>
+
+<style>
+
+.w-5
+  {
+    width: 20px;
+  }
+
+  .ml-3
+  {
+    display: none;
+  }
+
+  .flex-1
+  {
+    display: none;
+  }
+
+  .leading-5
+  {
+    margin-bottom: 10px;
+  }
+</style>
 
   <footer>
     <div class="container-fluid">

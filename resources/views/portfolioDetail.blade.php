@@ -237,7 +237,7 @@
                     stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio</span>
-                <span class="portfolio-number-active ml-2 ">112</span>
+                <span class="portfolio-number-active ml-2 ">{{$proptyCount}}</span>
               </div>
             </a>
             <a class="text-decoration-none secondary-text-color mr-4 py-3" href="receivables.html">
@@ -269,7 +269,7 @@
             <a href="#" class="btn primary-background default-border-radius" type="button">back</a>
           </div>
           <div class="col-md-6 col-12 d-flex flex-column align-items-end justify-content-center">
-            <p>Units: 100</p>
+            <p>Units: {{$totProptyCount}}</p>
             <div class=" filer">
               <div class="dropdown">
                 <button style="min-width: 200px"
@@ -289,8 +289,8 @@
                   </svg>
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" onclick="dateFilter()">Date</a>
-                  <a class="dropdown-item" onclick="unitFilter()">Unit</a>
+                  <a class="dropdown-item" onclick="dateFilter(2, 0)">Date</a>
+                  <a class="dropdown-item" onclick="unitFilter(2, 0)">Price</a>
                 </div>
               </div>
             </div>
@@ -337,10 +337,10 @@
             </div>
 
           </div>
+          <br></br>
+          <div>{{$totResults->links()}}</div>
 
-          {{$totResults->links()}}
-
-          <div class="col-12 my-5">
+          <!-- <div class="col-12 my-5">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
@@ -358,13 +358,36 @@
                 </li>
               </ul>
             </nav>
-          </div>
+          </div> -->
         </div>
         </div>
 
       </div>
     </div>
   </main>
+
+  <style>
+
+  .w-5
+  {
+    width: 20px;
+  }
+
+  .ml-3
+  {
+    display: none;
+  }
+
+  .flex-1
+  {
+    display: none;
+  }
+
+  .leading-5
+  {
+    margin-bottom: 10px;
+  }
+</style>
 
   <footer>
     <div class="container-fluid">
@@ -384,7 +407,8 @@
 
 
   <script>
-    function dateFilter()
+    
+    function unitFilter(limit, start)
     {
       $.ajaxSetup({
             headers: {
@@ -393,10 +417,53 @@
         });
 
         var property = <?php echo $proptyId?>;
-        
+
         console.log(property);
         
-        var data = {"property" : property, _token: '{{csrf_token()}}'};
+        var data = {"property" : property, 'start' : start, 'limit' : limit, _token: '{{csrf_token()}}'};
+
+        $.ajax({
+          
+          url : '/unitFilter',
+
+          type: "POST",
+
+          async: true,
+
+          data: data,
+
+          success	: function (data){
+              
+              if(data != '')
+              {
+                document.getElementById("historyTable").style.display="none";
+                $('#tableHistory').empty().prepend(data);
+                //$('#tableHistory').append(data);
+              }
+
+              else if(response == 2)
+              {
+                alert('something went wrong with the upload');
+              }
+              console.log(response);
+              //window.location.href= data
+          }
+      });
+    }
+
+    function dateFilter(limit, start)
+    {
+      $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+            }
+        });
+
+        var property = <?php echo $proptyId?>;
+
+        console.log(property);
+        
+        var data = {"property" : property, 'start' : start, 'limit' : limit, _token: '{{csrf_token()}}'};
 
         $.ajax({
           
@@ -413,7 +480,8 @@
               if(data != '')
               {
                 document.getElementById("historyTable").style.display="none";
-                $('#tableHistory').append(data);
+                $('#tableHistory').empty().prepend(data);
+                //$('#tableHistory').append(data);
               }
 
               else if(response == 2)
@@ -425,6 +493,40 @@
           }
       });
     }
+
+    var limit = 2;
+
+    var start = 2;
+
+    function loadDateMessages()
+    {
+      start = start + limit;
+      
+      console.log(start);
+      
+      setTimeout(function(){
+          
+        dateFilter(limit, start);
+          
+      }, 1000);
+        
+      console.log('yes');
+    };
+
+    function loadUnitMessages()
+    {
+      start = start + limit;
+
+      console.log(start);
+
+      setTimeout(function(){
+          
+        unitFilter(limit, start);
+          
+      }, 1000);
+
+      console.log('yes');
+    };
   </script>
 
   <!-- <script>
