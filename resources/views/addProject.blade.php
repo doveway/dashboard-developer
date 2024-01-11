@@ -43,7 +43,7 @@
   <header>
     <!-- desktop menu bar -->
     <nav class="navbar navbar-expand-lg nav-bottom-color navbar-light px-4 py-0 d-lg-flex d-none">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="/">
         <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
           alt="logo" />
       </a>
@@ -84,7 +84,7 @@
             </a>
           </li>
           <li class="nav-item mx-3">
-            <div class="d-flex user-container">
+          <div class="d-flex user-container align-items-center" type="button" data-toggle="dropdown">
               <div class="user-shorthand d-flex justify-content-center align-items-center mr-2">
                 <p class="m-0">JD</p>
                 <div class="active-user"></div>
@@ -92,7 +92,24 @@
               <div class="user-name">
                 <p>JD</p>
               </div>
-            </div>
+
+              <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="dropdown-menu" style="left: unset; right: 0">
+                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M10.0001 17.5L9.9167 17.3749C9.33783 16.5066 9.0484 16.0725 8.666 15.7582C8.32746 15.4799 7.93739 15.2712 7.51809 15.1438C7.04446 15 6.52267 15 5.4791 15H4.33341C3.39999 15 2.93328 15 2.57676 14.8183C2.26316 14.6586 2.00819 14.4036 1.8484 14.09C1.66675 13.7335 1.66675 13.2668 1.66675 12.3333V5.16667C1.66675 4.23325 1.66675 3.76654 1.8484 3.41002C2.00819 3.09641 2.26316 2.84144 2.57676 2.68166C2.93328 2.5 3.39999 2.5 4.33341 2.5H4.66675C6.53359 2.5 7.46701 2.5 8.18005 2.86331C8.80726 3.18289 9.31719 3.69282 9.63677 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333M10.0001 17.5V7.83333M10.0001 17.5L10.0835 17.3749C10.6623 16.5066 10.9518 16.0725 11.3342 15.7582C11.6727 15.4799 12.0628 15.2712 12.4821 15.1438C12.9557 15 13.4775 15 14.5211 15H15.6667C16.6002 15 17.0669 15 17.4234 14.8183C17.737 14.6586 17.992 14.4036 18.1518 14.09C18.3334 13.7335 18.3334 13.2668 18.3334 12.3333V5.16667C18.3334 4.23325 18.3334 3.76654 18.1518 3.41002C17.992 3.09641 17.737 2.84144 17.4234 2.68166C17.0669 2.5 16.6002 2.5 15.6667 2.5H15.3334C13.4666 2.5 12.5332 2.5 11.8201 2.86331C11.1929 3.18289 10.683 3.69282 10.3634 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333"
+                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg><span>&nbsp;&nbsp;&nbsp;Resources</span></a>
+                <a class="dropdown-item" href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5M7.5 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H7.5"
+                      stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg><span>&nbsp;&nbsp;&nbsp;Logout</span></a>
+              </div>
+            
           </li>
         </ul>
 
@@ -105,7 +122,7 @@
         <img class="img-fluid" src="./assets/images/menu-burger.svg" alt="" />
       </button> -->
       <div style="width: 32.5%" class="">
-        <a href="index.html">
+        <a href="/home">
           <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
             alt="logo" />
         </a>
@@ -141,7 +158,6 @@
 
   <main class="container-fluid d-flex flex-column " style="flex: 1">
     <div class="row pt-md-5 pt-2">
-      <!-- side-bar start here -->
       <div class="col-md-3 col-12 ">
         <div class="d-flex align-items-center side-bar">
           <div class="developer-logo">
@@ -167,11 +183,11 @@
           </div>
           <div class="d-md-block d-none my-4">
             <div>
-              <a href="#" class="btn primary-background default-border-radius" type="button"> <svg
+              <a href="/addProject"><button class="btn primary-background default-border-radius" type="button"> <svg
                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-                </svg> Add Project</a>
+                </svg> Add Project</button></a>
             </div>
 
             <div class="divider mt-5 mb-3"></div>
@@ -182,29 +198,28 @@
           </div>
         </div>
       </div>
-
-      <!-- main body starts here -->
       <div class="col-md-8  col-12">
         <div class="my-md-0 my-4">
-          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="assets/images/hand.svg"
+          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/hand.svg'); }}"
               alt=""> </p>
           <p class="custom-font-size-13">Manage all your portfolio on the BuySmallsmall platform</p>
         </div>
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  sub-menu--dashboard-active"
+              href="/portfolio">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M7 13.125V14.875M10.5 9.625V14.875M14 6.125V14.875M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#A6A299" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio Stats</span>
               </div>
             </a>
 
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="#">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="/portfolio">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
@@ -212,10 +227,10 @@
                     stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Portfolio</span>
-                <span class="portfolio-number ml-2">112</span>
+                <span class="portfolio-number ml-2">{{$proptyCount}}</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="/receivables">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -225,13 +240,12 @@
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active"
-              href="add-project1.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="/addProject">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
                     d="M10.5 7V14M7 10.5H14M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z"
-                    stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#A6A299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="pl-2">Add Project</span>
               </div>
@@ -255,14 +269,18 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <select id="inputState" class="form-control input-custom">
-                        <option selected>State</option>
-                        <option>...</option>
+                        <option selected>Pick state</option>
+                        @foreach($states as $state)
+                        <option>{{$state->name}}</option>
+                        @endforeach
                       </select>
                     </div>
                     <div class="form-group col-md-6">
                       <select id="inputCity" class="form-control input-custom">
-                        <option selected>City</option>
-                        <option>...</option>
+                        <option selected>Pick city</option>
+                        @foreach($cities as $city)
+                        <option>{{$city->name}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -307,7 +325,7 @@
                 <!-- 2nd column of the form -->
                 <div class="col-md-6 col-12 mt-md-0 mt-4">
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" placeholder="Number of Units" id = "unitNumber" name = "unitNumber">
+                    <input type="number" class="form-control input-custom" placeholder="Number of Units" id = "unitNumber" name = "unitNumber">
                   </div>
                   <div class="form-group row">
                     <div class="col">
@@ -321,21 +339,21 @@
                   </div>
                   <div class="form-group">
                     <select class="form-control input-custom" id="currentStage">
-                      <option selected>Current stage</option>
-                      <option>...</option>
+                      <option selected value="1">Completed</option>
+                      <option value="3">Ongoing Completed within 3 months</option>
+                      <option value="6">Ongoing Completed within 6 months</option>
+                      <option value="12">Ongoing Completed within 12 months</option>
+                      <option value="13">Ongoing Completed above 12 months</option>
+                      <option value="0">Yet to break ground</option>
                     </select>
                   </div>
+
                   <div class="form-group">
-                    <select class="form-control input-custom" id="landTitle">
-                      <option selected>Land title</option>
-                      <option>...</option>
-                    </select>
+                    <input type="text" class="form-control input-custom" placeholder="Land Title" id ="landTitle">
                   </div>
+
                   <div class="form-group">
-                    <select class="form-control input-custom" id="approvals">
-                      <option selected>Approvals</option>
-                      <option>...</option>
-                    </select>
+                    <input type="text" class="form-control input-custom" placeholder="Approvals" id = "approvals">
                   </div>
 
                   <div class="col-12 pb-3" id="err" style = "color: red"></div>
@@ -377,20 +395,30 @@
                   <div class="form-group ">
                     <select id="propty" class="form-control input-custom">
                       <option selected>Property</option>
-                      <option>...</option>
+                      <option value = 'studio'>Studio</option>
+                      <option value = '1bed'>1 bedroom</option>
+                      <option value = '2bed'>2 bedroom</option>
+                      <option value = '3bed'>3 bedroom</option>
+                      <option value = '4bed'>4 bedroom</option>
                     </select>
                   </div>
                   <div class="form-group ">
                     <select id="proptyType" class="form-control input-custom">
                       <option selected>Type of property</option>
-                      <option>...</option>
+                      <option value = 'Flat'>Flat</option>
+                      <option value = 'Maisonette'>Maisonette</option>
+                      <option value = 'Terrace'>Terrace</option>
+                      <option value = 'SemiDetached'>Semi-detached duplex</option>
+                      <option value = 'fullyDetached'>fully-detached duplex</option>
+                      <option value = 'PenthouseLoft'>Penthouse Loft</option>
+                      <option value = 'Bungalow'>Bungalow</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" id="unitsNumber" placeholder="Unit Number">
+                    <input type="number" class="form-control input-custom" id="unitsNumber" placeholder="Unit Number">
                   </div>
                   <div class="form-group">
-                    <input type="text" id = "size" class="form-control input-custom" placeholder="Size (sqm)">
+                    <input type="number" id = "size" class="form-control input-custom" placeholder="Size (sqm)">
                   </div>
                   <div class="mb-4">
                     <p class="mb-3">Features</p>
@@ -428,10 +456,10 @@
                 <div class="col-md-6 col-12 mt-md-0 mt-4">
                   <div class="form-group row">
                     <div class="col">
-                      <input type="text" class="form-control" id = "selPrice" placeholder="Selling price">
+                      <input type="number" class="form-control" id = "selPrice" placeholder="Selling price">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" id = "bssSelPrice" placeholder="BSS Special price">
+                      <input type="number" class="form-control" id = "bssSelPrice" placeholder="BSS Special price">
                     </div>
                   </div>
                   <div class="form-group">
@@ -473,6 +501,70 @@
       </div>
     </div>
 
+    <!-- <button type="button" id = "modalSuccess" class="btn btn-danger d-none" data-toggle="modal" data-target="#success" >Test success</button>
+      <div class="modal fade schedule-visit-modal" id="success" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+        <div class="row my-4">
+          <div class=" col-12 my-3 d-flex justify-content-center">
+            <div class="default-background p-5  d-flex flex-column justify-content-center align-items-center">
+              <p class="custom-font-size-30  font-weight-bold my-3">Project Uploaded Successful</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <path
+                  d="M15.6253 25L21.8753 31.25L34.3753 18.75M45.8337 25C45.8337 36.506 36.5063 45.8334 25.0003 45.8334C13.4944 45.8334 4.16699 36.506 4.16699 25C4.16699 13.4941 13.4944 4.16669 25.0003 4.16669C36.5063 4.16669 45.8337 13.4941 45.8337 25Z"
+                  stroke="#662D91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+              </div>
+
+
+
+              <button type="button" class="close" data-dismiss = "modal" aria-label="close">
+
+          </div>
+          <!-- <div class="col-12 d-flex my-3 justify-content-center" onclick="addNew()">
+            <a class="btn primary-background">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>&nbsp;&nbsp;Add more Project
+            </a>
+          </div> -->
+
+          <!-- </div>    
+        </div> -->
+
+        <button type="button" id = "modalSuccess" class="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <div class="row my-4">
+              <div class=" col-12 my-3 d-flex justify-content-center">
+                <div class="default-background p-5  d-flex flex-column justify-content-center align-items-center">
+                  <p style="font-size: 20px; color:green" class="  font-weight-bold my-3 text-center" >Project Uploaded Successful</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <path
+                      d="M15.6253 25L21.8753 31.25L34.3753 18.75M45.8337 25C45.8337 36.506 36.5063 45.8334 25.0003 45.8334C13.4944 45.8334 4.16699 36.506 4.16699 25C4.16699 13.4941 13.4944 4.16669 25.0003 4.16669C36.5063 4.16669 45.8337 13.4941 45.8337 25Z"
+                      stroke="#662D91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
   </main>
 
   <footer>
@@ -506,21 +598,31 @@
                 <div class="col-md-6 col-12">
                   <div class="form-group ">
                       <select id="proptys" class="form-control input-custom">
-                        <option selected>Property</option>
-                        <option>...</option>
+                      <option selected>Property</option>
+                      <option value = 'studio'>Studio</option>
+                      <option value = '1bed'>1 bedroom</option>
+                      <option value = '2bed'>2 bedroom</option>
+                      <option value = '3bed'>3 bedroom</option>
+                      <option value = '4bed'>4 bedroom</option>
                       </select>
                   </div>
                   <div class="form-group ">
                     <select id="proptyTypes" class="form-control input-custom">
-                      <option selected>Property Type</option>
-                      <option>...</option>
+                    <option selected>Type of property</option>
+                      <option value = 'Flat'>Flat</option>
+                      <option value = 'Maisonette'>Maisonette</option>
+                      <option value = 'Terrace'>Terrace</option>
+                      <option value = 'SemiDetached'>Semi-detached duplex</option>
+                      <option value = 'fullyDetached'>fully-detached duplex</option>
+                      <option value = 'PenthouseLoft'>Penthouse Loft</option>
+                      <option value = 'Bungalow'>Bungalow</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" id="unitNumbers" placeholder="Unit Number">
+                    <input type="number" class="form-control input-custom" id="unitNumbers" placeholder="Unit Number">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" id="sizes" placeholder="Size (sqm)">
+                    <input type="number" class="form-control input-custom" id="sizes" placeholder="Size (sqm)">
                   </div>
 
                   <div class="mb-4">
@@ -558,10 +660,10 @@
                 <div class="col-md-6 col-12 mt-md-0 mt-4">
                   <div class="form-group row">
                     <div class="col">
-                      <input type="text" class="form-control" id = "selPrices" placeholder="Selling price">
+                      <input type="number" class="form-control" id = "selPrices" placeholder="Selling price">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" id = "bssSelPrices" placeholder="BSS Special price">
+                      <input type="number" class="form-control" id = "bssSelPrices" placeholder="BSS Special price">
                     </div>
                   </div>
                   <div class="form-group">
@@ -574,14 +676,13 @@
                     </div>
                   </div>
                 </div>
-            </div>  
-
-            <div class="col-md-8 col-12 d-flex mt-5 justify-content-between">
+                <div class="col-md-8 col-12 d-flex mt-5 justify-content-between">
                 <a href="add-project1.html" class="btn  default-border-radius" type="button"
                   style="border: 2px solid #662D91;">back</a>
                 <button onclick="newProjects()" class="btn primary-background default-border-radius" style="width: 70%"
                   type="button"> Upload Project</button>
-            </div>
+                </div>
+              </div>  
         `;
 
       // create a new form
@@ -602,6 +703,8 @@
 
 
   <script>
+    //var unitNumbers = $('#unitNumber').val();
+
     function login()
     {
         if($('#name').val() == "")
@@ -735,6 +838,36 @@
             console.log(landTitle);
             console.log(approvals);
 
+            if(gym === false)
+            {
+              gym = 'no'
+            }
+
+            else
+            {
+              gym = 'yes'
+            }
+
+            if(swimming === false)
+            {
+              swimming = 'no'
+            }
+
+            else
+            {
+              swimming = 'yes'
+            }
+
+            if(others === false)
+            {
+              others = 'no'
+            }
+
+            else
+            {
+              others = 'yes'
+            }
+
             var data = {"name" : name, "state" : state, "city" : city, "address" : address, "swimming" : swimming, "gym" : gym, "others" : others, "fullyServiced" : fullyServiced, "partialServiced" : partialServiced, "selfServiced" : selfServiced, "unitNumber" : unitNumber, "startDate" : startDate, "deliveryDate" : deliveryDate, "currStage" : currStage, "landTitle" : landTitle, "approvals" : approvals, _token: '{{csrf_token()}}'};
 
             //console.log(data);
@@ -835,8 +968,59 @@
             console.log(selPrice);
             console.log(bssSelPrice);
 
+            if(oven === false)
+            {
+              oven = 'no'
+            }
+
+            else
+            {
+              oven = 'yes'
+            }
+
+            if(gasHob === false)
+            {
+              gasHob = 'no'
+            }
+
+            else
+            {
+              gasHob = 'yes'
+            }
+
+            if(microwave === false)
+            {
+              microwave = 'no'
+            }
+
+            else
+            {
+              microwave = 'yes'
+            }
+
+            if(ac === false)
+            {
+              ac = 'no'
+            }
+
+            else
+            {
+              ac = 'yes'
+            }
+
+            if(washingMachine === false)
+            {
+              washingMachine = 'no'
+            }
+
+            else
+            {
+              washingMachine = 'yes'
+            }
 
             var data = {"property" : property, "proptyType" : proptyType, "unitNumber" : unitNumber, "size" : size, "oven" : oven, "gasHob" : gasHob, "microwave" : microwave, "ac" : ac, "washingMachine" : washingMachine, "textarea2" : textarea2, "textarea3" : textarea3, "selPrice" : selPrice, "bssSelPrice" : bssSelPrice, _token: '{{csrf_token()}}'};
+
+            var link = document.getElementById('modalSuccess');
 
             $.ajax({
               
@@ -856,8 +1040,8 @@
                     document.getElementById("addProject2").style.display="none";
                     document.getElementById("addNew").style.display="block";
                     document.getElementById("nextUnit").style.display="none";
-                    window.location.replace('/uploadSuccessfully');
-                    alert('Project successfully added');
+                    link.click();
+                    //alert('Project successfully added');
                   }
 
                   else if(response == 2)
@@ -939,6 +1123,8 @@
 
             var data = {"property" : property, "proptyType" : proptyType, "unitNumber" : unitNumber, "size" : size, "oven" : oven, "gasHob" : gasHob, "microwave" : microwave, "ac" : ac, "washingMachine" : washingMachine, "textarea2" : textarea2, "textarea3" : textarea3, "selPrice" : selPrice, "bssSelPrice" : bssSelPrice, _token: '{{csrf_token()}}'};
 
+            var link = document.getElementById('modalSuccess');
+
             $.ajax({
               
               url : '/addProjectTypes',
@@ -958,8 +1144,8 @@
                     document.getElementById("addProject3").style.display="none";
                     document.getElementById("addNew").style.display="block";
                     document.getElementById("nextUnit").style.display="none";
-                    window.location.replace('/uploadSuccessfully');
-                    alert('Project successfully added');
+                    link.click();
+                    //alert('Project successfully added');
                   }
 
                   else if(response == 2)
@@ -973,8 +1159,8 @@
 
         }
     }
-    </script>
 
+    </script>
 
 
   <!-- <script>

@@ -10,6 +10,10 @@ use App\Models\Developer;
 
 use App\Models\Project;
 
+use App\Models\State;
+
+use App\Models\City;
+
 use App\Models\ProjectType;
 
 use Illuminate\Pagination\Paginator;
@@ -258,7 +262,11 @@ class UserAuth extends Controller
             }
         }
 
-        return view("addProject")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
+        $states = State::where('id', '2648')->orWhere('id', '2671')->get();
+
+        $cities = City::where('state_id', '2648')->orWhere('state_id', '2671')->get();
+
+        return view("addProject")->with(['proptyCount' => $proptyCount, 'cities' => $cities, 'states' => $states, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
     }
 
     public function insertProject(Request $request)
@@ -280,7 +288,7 @@ class UserAuth extends Controller
         $landTitle =  $request->landTitle;
         $approvals =  $request->approvals;
 
-        if($swimming == true)
+        if($swimming == 'yes')
         {
             $swimming = 'swimming';
         }
@@ -290,7 +298,7 @@ class UserAuth extends Controller
             $swimming = '';
         }
 
-        if($gym == true)
+        if($gym == 'yes')
         {
             $gym = 'gym';
         }
@@ -300,7 +308,7 @@ class UserAuth extends Controller
             $gym = '';
         }
 
-        if($others == true)
+        if($others == 'yes')
         {
             $others = 'others';
         }
@@ -385,7 +393,7 @@ class UserAuth extends Controller
         $selPrice =  $request->selPrice;
         $bssSelPrice =  $request->bssSelPrice;
 
-        if($oven == true)
+        if($oven == 'yes')
         {
             $oven = 'oven';
         }
@@ -395,7 +403,7 @@ class UserAuth extends Controller
             $oven = '';
         }
 
-        if($gasHob == true)
+        if($gasHob == 'yes')
         {
             $gasHob = 'gasHob';
         }
@@ -405,7 +413,7 @@ class UserAuth extends Controller
             $gasHob = '';
         }
 
-        if($microwave == true)
+        if($microwave == 'yes')
         {
             $microwave = 'microwave';
         }
@@ -415,7 +423,7 @@ class UserAuth extends Controller
             $microwave = '';
         }
 
-        if($ac == true)
+        if($ac == 'yes')
         {
             $ac = 'ac';
         }
@@ -425,7 +433,7 @@ class UserAuth extends Controller
             $ac = '';
         }
 
-        if($washingMachine == true)
+        if($washingMachine == 'yes')
         {
             $washingMachine = 'washingMachine';
         }
@@ -1184,5 +1192,11 @@ class UserAuth extends Controller
         }
 
         return view("uploadSuccessfully")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('developerID');
+        return redirect("/");
     }
 }

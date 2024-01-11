@@ -52,7 +52,7 @@
   <header>
     <!-- desktop menu bar -->
     <nav class="navbar navbar-expand-lg nav-bottom-color navbar-light px-4 py-0 d-lg-flex d-none">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="/">
         <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
           alt="logo" />
       </a>
@@ -92,14 +92,15 @@
               </svg>
             </a>
           </li>
-          <li class="nav-item mx-3 dropdown">
-            <div class="d-flex user-container align-items-center" type="button" data-toggle="dropdown">
+          <li class="nav-item mx-3">
+          <div class="d-flex user-container align-items-center" type="button" data-toggle="dropdown">
               <div class="user-shorthand d-flex justify-content-center align-items-center mr-2">
                 <p class="m-0">JD</p>
                 <div class="active-user"></div>
               </div>
               <div class="user-name">
                 <p>JD</p>
+              </div>
               </div>
               <i class="fa-solid fa-angle-down"></i>
               <div class="dropdown-menu" style="left: unset; right: 0">
@@ -109,14 +110,13 @@
                       d="M10.0001 17.5L9.9167 17.3749C9.33783 16.5066 9.0484 16.0725 8.666 15.7582C8.32746 15.4799 7.93739 15.2712 7.51809 15.1438C7.04446 15 6.52267 15 5.4791 15H4.33341C3.39999 15 2.93328 15 2.57676 14.8183C2.26316 14.6586 2.00819 14.4036 1.8484 14.09C1.66675 13.7335 1.66675 13.2668 1.66675 12.3333V5.16667C1.66675 4.23325 1.66675 3.76654 1.8484 3.41002C2.00819 3.09641 2.26316 2.84144 2.57676 2.68166C2.93328 2.5 3.39999 2.5 4.33341 2.5H4.66675C6.53359 2.5 7.46701 2.5 8.18005 2.86331C8.80726 3.18289 9.31719 3.69282 9.63677 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333M10.0001 17.5V7.83333M10.0001 17.5L10.0835 17.3749C10.6623 16.5066 10.9518 16.0725 11.3342 15.7582C11.6727 15.4799 12.0628 15.2712 12.4821 15.1438C12.9557 15 13.4775 15 14.5211 15H15.6667C16.6002 15 17.0669 15 17.4234 14.8183C17.737 14.6586 17.992 14.4036 18.1518 14.09C18.3334 13.7335 18.3334 13.2668 18.3334 12.3333V5.16667C18.3334 4.23325 18.3334 3.76654 18.1518 3.41002C17.992 3.09641 17.737 2.84144 17.4234 2.68166C17.0669 2.5 16.6002 2.5 15.6667 2.5H15.3334C13.4666 2.5 12.5332 2.5 11.8201 2.86331C11.1929 3.18289 10.683 3.69282 10.3634 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333"
                       stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg><span>&nbsp;&nbsp;&nbsp;Resources</span></a>
-                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                <a class="dropdown-item" href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20" fill="none">
                     <path
                       d="M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5M7.5 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H7.5"
                       stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg><span>&nbsp;&nbsp;&nbsp;Logout</span></a>
               </div>
-            </div>
           </li>
         </ul>
 
@@ -129,7 +129,7 @@
         <img class="img-fluid" src="./assets/images/menu-burger.svg" alt="" />
       </button> -->
       <div style="width: 32.5%" class="">
-        <a href="index.html">
+        <a href="/home">
           <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
             alt="logo" />
         </a>
@@ -217,7 +217,7 @@
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="/portfolio">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -229,7 +229,7 @@
             </a>
 
             <a class="text-decoration-none secondary-text-color mr-4 py-3 sub-menu--dashboard-active"
-              href="portfolio.html">
+              href="/portfolio">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                   <path
@@ -240,7 +240,7 @@
                 <span class="portfolio-number-active ml-2 ">{{$proptyCount}}</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="receivables.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3" href="/receivables">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
@@ -250,7 +250,7 @@
                 <span class="pl-2">Receivables</span>
               </div>
             </a>
-            <a class="text-decoration-none secondary-text-color mr-4 py-3 " href="add-project1.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3 " href="/addProject">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path
