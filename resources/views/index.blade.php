@@ -162,7 +162,7 @@
       <div class="col-md-3 col-12 ">
         <div class="d-flex align-items-center side-bar">
           <div class="developer-logo">
-            <img src="{{ URL::asset('images/terra-logo.png'); }}" alt="">
+            <img src="#" alt="">
           </div>
           <div class="developer-name my-3">
             <p>{{$developerName}}</p>
