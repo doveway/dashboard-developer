@@ -59,7 +59,6 @@ return [
 
     'url' => env('APP_URL', 'https://developer-dashboard.smallsmall.com/'),
 
-
     'asset_url' => env('ASSET_URL'),
 
     /*
