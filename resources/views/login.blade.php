@@ -200,6 +200,11 @@
 
                 success	: function (response){
                     
+                    if(response == 0)
+                    {
+                      window.location.replace('/projectPayout');
+                    }
+
                     if(response == 1)
                     {
                         window.location.replace('/home');

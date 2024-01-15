@@ -46,6 +46,10 @@ class Kernel extends HttpKernel
 
         'protectedPage'=>[
             \App\Http\Middleware\authentication::class,
+        ], 
+
+        'protectedAccounts'=>[
+            \App\Http\Middleware\accounts::class,
         ] 
     ];
 

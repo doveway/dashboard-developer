@@ -14,6 +14,14 @@ use App\Models\State;
 
 use App\Models\City;
 
+use App\Models\Property;
+
+use App\Models\Product;
+
+use App\Models\Payout;
+
+use App\Models\Customer;
+
 use App\Models\ProjectType;
 
 use Illuminate\Pagination\Paginator;
@@ -25,23 +33,47 @@ class UserAuth extends Controller
         $email = $request->email;
         $pass =  md5($request->password);
 
+        //dd(md5('Account123'));
+
         $users = Developer::where('email', $email)->where('password', $pass)->count();
 
         if($users == 1)
         {
-            $request->session()->put('user', $email);
-
-            $users = Developer::where('email', $email)->where('password', $pass)->get();
-
-            foreach($users as $user)
+            if($email == 'accounts@smallsmall.com' && $pass == 'c34a33a1eee3a0ff7afcfe03f088bddd')
             {
-                $developerID = $user['developer_id'];
-                $request->session()->put('developerID', $developerID);
+                $request->session()->put('account', $email);
+
+                $request->session()->put('user', $email);
+
+                $users = Developer::where('email', $email)->where('password', $pass)->get();
+
+                foreach($users as $user)
+                {
+                    $developerID = $user['developer_id'];
+                    $request->session()->put('developerID', $developerID);
+                }
+
+                //$account = $request->session()->get('account');
+
+                echo 0;
+            }
+
+            else
+            {
+                $request->session()->put('user', $email);
+
+                $users = Developer::where('email', $email)->where('password', $pass)->get();
+
+                foreach($users as $user)
+                {
+                    $developerID = $user['developer_id'];
+                    $request->session()->put('developerID', $developerID);
+                }
+
+                echo 1;
             }
 
             //$username = $request->session()->get('developerID');
-             
-            echo 1;
         }
 
         else
@@ -1194,9 +1226,66 @@ class UserAuth extends Controller
         return view("uploadSuccessfully")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
     }
 
+    
+    public function updateProject(Request $request)
+    {
+        return view("updateProject");
+    }
+
+    public function projectPayout(Request $request)
+    {
+        $developers = Developer::all();
+
+        $propertys = Property::all();
+
+        $products = Product::all();
+
+        $parents = Project::all();
+
+        $customers  = Customer::all();
+        
+        return view("projectPayout")->with(['developers' => $developers, 'propertys' => $propertys, 'parents' => $parents, 'products' => $products, 'customers' => $customers]);
+    }
+
+    
+    public function addPayout(Request $request)
+    {
+        $developer = $request->developer;
+        $propty = $request->propty;
+        $product = $request->product;
+        $parentPropty = $request->parentPropty;
+        $paymentType = $request->paymentType;
+        $amount = $request->amount;
+        $customer = $request->customer;
+        $date = $request->date;
+        
+        $user = new Payout;   
+        $user->developer_id = $developer;
+        $user->Amount = $amount;
+        $user->Date = $date;
+        $user->customer_id = $customer;
+        $user->property_id = $propty;
+        $user->parent_id = $parentPropty;
+        $user->product = $product;
+        $user->paymentType = $paymentType;
+
+        if($user->save())
+        {
+            echo 1;
+        }
+
+        else
+        {
+            echo 0;
+        }
+
+    }
+    
     public function logout(Request $request)
     {
         $request->session()->forget('developerID');
+        $request->session()->forget('account');
+        $request->session()->forget('user');
         return redirect("/");
     }
 }
