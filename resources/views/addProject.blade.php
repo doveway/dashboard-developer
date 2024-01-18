@@ -607,6 +607,7 @@
                       </select>
                   </div>
                   <div class="form-group ">
+                  
                     <select id="proptyTypes" class="form-control input-custom">
                     <option selected>Type of property</option>
                       <option value = 'Flat'>Flat</option>

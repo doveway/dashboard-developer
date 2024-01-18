@@ -1226,12 +1226,6 @@ class UserAuth extends Controller
         return view("uploadSuccessfully")->with(['proptyCount' => $proptyCount, 'totalSold' => $totalSold, 'totalActive' => $totalActive, 'developerName' => $developerName]);
     }
 
-    
-    public function updateProject(Request $request)
-    {
-        return view("updateProject");
-    }
-
     public function projectPayout(Request $request)
     {
         $developers = Developer::all();
@@ -1279,6 +1273,43 @@ class UserAuth extends Controller
             echo 0;
         }
 
+    }
+
+    public function updateProject(Request $request)
+    {
+        $developers = Developer::all();
+
+        $propertys = Property::all();
+
+        $products = Product::all();
+
+        $parents = Project::all();
+
+        $customers  = Customer::all();
+        
+        return view("updateProject")->with(['developers' => $developers, 'propertys' => $propertys, 'parents' => $parents, 'products' => $products, 'customers' => $customers]);        
+    }
+
+    public function updtPayouts(Request $request)
+    {
+        $developer = $request->developer;
+        $propty = $request->propty;
+        $availability = $request->availability;
+        $parentPropty = $request->parentPropty;
+        $receivable = $request->receivable;
+        
+        $user = Property::where('propertyID', $propty)
+                ->update(['availability' => $availability, 'receivable' => $receivable,]);
+        
+        if($user)
+        {
+            echo 1;
+        }
+
+        else
+        {
+            echo 0;
+        }        
     }
     
     public function logout(Request $request)

@@ -186,11 +186,11 @@
 
               <div class="form-row">
                 <div class="form-group col-md-6">
-                    <select id="product" class="form-control input-custom">
-                    <option selected>Pick Product</option>
-                    @foreach($products as $product)
-                    <option value="{{$product->type}}">{{$product->type}}</option>
-                    @endforeach
+                    <select id="availability" class="form-control input-custom">
+                        <option selected>Pick Availability</option>
+                        <option value="locked">Locked</option>
+                        <option value="sold">Sold</option>
+                        <option value="available">Available</option>
                     </select>
                 </div>
 
@@ -205,29 +205,9 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                    <select id="paymentType" class="form-control input-custom">
-                    <option selected>Type of Payment</option>
-                    <option value = 'bankTransfer'>Bank Transfer</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-                   <input type="number" class="form-control input-custom" id="amount" placeholder="Amount">
-                </div>
-                <div class="form-group col-md-6">
-                    <select id="customer" class="form-control input-custom">
-                    <option selected>Customer</option>
-                    @foreach($customers as $customer)
-                    <option value="{{$customer->userID}}">{{$customer->firstName}} {{$customer->lastName}}</option>
-                    @endforeach
-                    </select>
+                   <input type="number" class="form-control input-custom" id="receivable" placeholder="receivable">
                 </div>
             </div>
-
-            <div class="form-group">
-            <label class="mb-0">Date:</label>
-                <input type="date" class="form-control input-custom" placeholder="Date" id="date" name = "date">
-            </div>
-
             
         <div class="col-12 pb-3" id="err" style = "color: red"></div>
 
@@ -269,10 +249,10 @@ function payout()
       return false;
   }
 
-  else if($('#product').val() == "")
+  else if($('#availability').val() == "")
   {
       $('#inputCity').addClass('has-error');
-      $("#err").html("product field cannot be empty");
+      $("#err").html("availability field cannot be empty");
       return false;
   }
 
@@ -283,24 +263,10 @@ function payout()
       return false;
   }
 
-  else if($('#paymentType').val() == "")
+  else if($('#receivable').val() == "")
   {
-      $('#unitNumber').addClass('has-error');
-      $("#err").html("payment Type field cannot be empty");
-      return false;
-  }
-
-  else if($('#customer').val() == "")
-  {
-      $('#startDate').addClass('has-error');
-      $("#err").html("customer field cannot be empty");
-      return false;
-  }
-
-  else if($('#date').val() == "")
-  {
-      $('#deliveryDate').addClass('has-error');
-      $("#err").html("Date field cannot be empty");
+      $('#receivable').addClass('has-error');
+      $("#err").html("receivable field cannot be empty");
       return false;
   }
 
@@ -320,34 +286,25 @@ function payout()
 
       var propty = document.getElementById('propty').value;
 
-      var product =  document.getElementById('product').value;
+      var availability =  document.getElementById('availability').value;
 
       var parentPropty = document.getElementById('parentPropty').value;
 
-      var amount = document.getElementById('amount').value;
+      var receivable = document.getElementById('receivable').value;
 
-      var paymentType = document.getElementById('paymentType').value;
-
-      var customer = document.getElementById('customer').value;
-
-      var date = document.getElementById('date').value;
-    
       console.log(developer);
       console.log(propty);
-      console.log(product);
+      console.log(availability);
       console.log(parentPropty);
-      console.log(paymentType);
-      console.log(customer);
-      console.log(date);
+      console.log(receivable);
       
-      var data = {"developer" : developer, "propty" : propty, "product" : product, "parentPropty" : parentPropty, "paymentType" : paymentType, "amount" : amount, "customer" : customer, "date" : date, _token: '{{csrf_token()}}'};
+      var data = {"developer" : developer, "propty" : propty, "availability" : availability, "parentPropty" : parentPropty, "receivable" : receivable, _token: '{{csrf_token()}}'};
 
       //console.log(data);
-
       
       $.ajax({
         
-        url : '/addPayouts',
+        url : '/updtPayouts',
 
         type: "POST",
 
@@ -360,7 +317,7 @@ function payout()
             if(response == 1)
             {
               alert('Payout Successfully Added');
-              window.location.replace('/projectPayout');
+              window.location.replace('/updateProject');
             }
 
             else if(response == 2)
