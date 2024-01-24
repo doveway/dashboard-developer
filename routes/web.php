@@ -56,6 +56,8 @@ Route::group(['middleware' => ['protectedAccounts']], function () {
 
     Route::get("/updateProject", [UserAuth::class, 'updateProject']);
 
+    Route::post("/updtPayouts", [UserAuth::class, 'updtPayouts']);
+
     Route::get("/projectPayout", [UserAuth::class, 'projectPayout']);
 
     Route::post("/addPayouts", [UserAuth::class, 'addPayout']);
