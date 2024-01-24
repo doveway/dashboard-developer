@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'dashboard.cojxxisixk5c.eu-west-1.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'rentsmallsmall_dev_portal'),
+            'database' => env('DB_DATABASE', 'developerDashboard'),
             'username' => env('DB_USERNAME', 'rentsmallsmall_buytolet'),
             'password' => env('DB_PASSWORD', 'Buytolet!2021'),
             'unix_socket' => env('DB_SOCKET', ''),
@@ -125,7 +125,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
