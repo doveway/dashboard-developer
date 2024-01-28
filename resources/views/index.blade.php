@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="assets/images/bss-favicon.png" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../public/css/bootstrap-css/bootstrap.min.css" crossorigin="anonymous" />
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +22,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="{{ URL::asset('fontawesome/css/fontawesome.css'); }}" rel="stylesheet" />
-  <link href="{{ URL::asset('fontawesome/css/brands.css'); }}" rel="stylesheet" />
-  <link href="{{ URL::asset('fontawesome/css/solid.css'); }}" rel="stylesheet" />
+  <link href="../public/fontawesome/css/fontawesome.css" rel="stylesheet" />
+  <link href="../public/fontawesome/css/brands.css" rel="stylesheet" />
+  <link href="../public/fontawesome/css/solid.css" rel="stylesheet" />
 
   <!-- custom CSS -->
-  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/header.css'); }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/footer.css'); }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/index.css'); }}" />
+  <link rel="stylesheet" href="../public/css/custom-css/header.css" />
+  <link rel="stylesheet" href="../public/css/custom-css/footer.css" />
+  <link rel="stylesheet" href="../public/css/custom-css/index.css" />
 
   <title>Dashboard - Developer Login</title>
 </head>
@@ -45,7 +45,7 @@
     <!-- desktop menu bar -->
     <nav class="navbar navbar-expand-lg nav-bottom-color navbar-light px-4 py-0 d-lg-flex d-none">
       <a class="navbar-brand" href="/">
-        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
+        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="../public/images/bss-logo.svg"
           alt="logo" />
       </a>
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
@@ -124,7 +124,7 @@
       </button> -->
       <div style="width: 32.5%" class="">
         <a href="/home">
-          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
+          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="../public/images/bss-logo.svg"
             alt="logo" />
         </a>
       </div>
@@ -147,7 +147,7 @@
 
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
         aria-expanded="false" aria-label="Toggle navigation">
-        <img class="img-fluid" src="{{ URL::asset('images/menu-burger.svg'); }}" alt="" />
+        <img class="img-fluid" src="../public/images/menu-burger.svg" alt="" />
       </button>
 
       <div id="my-nav" class="collapse navbar-collapse mobile-menu-collapse pl-0 pt-4">
@@ -201,7 +201,7 @@
       </div>
       <div class="col-md-8  col-12">
         <div class="my-md-0 my-4">
-          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/hand.svg'); }}"
+          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="../public/images/hand.svg"
               alt=""> </p>
           <p class="custom-font-size-13">Manage all your portfolio on the BuySmallsmall platform</p>
         </div>
@@ -387,10 +387,10 @@
   </footer>
 
   <!-- Jquery js -->
-  <script src="{{ URL::asset('js/jquery.min.js'); }}" crossorigin="anonymous"></script>
+  <script src="../public/js/jquery.min.js" crossorigin="anonymous"></script>
   <!-- Bootstrap js and Popper js -->
-  <script src="{{ URL::asset('js/popper.min.js'); }}" crossorigin="anonymous"></script>
-  <script src="{{ URL::asset('js/bootstrap-js/bootstrap.min.js'); }}" crossorigin="anonymous"></script>
+  <script src="../public/js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="../public/js/bootstrap-js/bootstrap.min.js" crossorigin="anonymous"></script>
 
   <!-- <script>
     // $(document).ready(function () {
