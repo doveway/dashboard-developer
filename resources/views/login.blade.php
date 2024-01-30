@@ -136,10 +136,10 @@
   </footer>
 
   <!-- Jquery js -->
-  <script src="{{ ../public/js/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="../public/js/jquery.min.js" crossorigin="anonymous"></script>
   <!-- Bootstrap js and Popper js -->
-  <script src="{{ ../public/js/popper.min.js" crossorigin="anonymous"></script>
-  <script src="{{ ../public/js/bootstrap-js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="../public/js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="../public/js/bootstrap-js/bootstrap.min.js" crossorigin="anonymous"></script>
 
   <!-- <script>
     // $(document).ready(function () {
