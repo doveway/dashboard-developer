@@ -2,25 +2,17 @@
     Options +FollowSymLinks
     RewriteEngine On
 
-    # Redirect everything to the public folder
+    # Set the base path for the application
+    RewriteBase /developer-dashboard.smallsmall.com/
+
+    # Redirect all requests to the public folder
     RewriteCond %{REQUEST_URI} !^/public/
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ /public/$1 [L]
+    RewriteRule ^(.*?)$ public/$1 [L]
 
-    # Redirect specific URL to public/index.php
-    RewriteRule ^developer-dashboard\.smallsmall\.com(/.*)?$ /public/index.php [L]
+    # Handle requests for the developer dashboard
+    RewriteRule ^(developer-dashboard.smallsmall.com/)?$ public/index.php [L]
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
-
-    # Handle Front Controller...
+    # Redirect non-existent files or directories to Laravel's index.php
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
