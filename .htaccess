@@ -1,13 +1,11 @@
-<IfModule mod_rewrite.c>
-Options +FollowSymLinks
-RewriteEngine On
-
-RewriteCond %{REQUEST_URI} !^/public/
-
-RewriteCond %{REQUEST_FILENAME} !-d
+Options -Indexes
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
-
-RewriteRule ^(.\*)$ /public/$1 
-#RewriteRule ^ index.php [L]
-RewriteRule ^(developer-dashboard.smallsmall.com/)?$ public/index.php [L]
-</IfModule>
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+<FilesMatch ".pdf$">
+    Header set X-Robots-Tag "noindex, noarchive, nosnippet"
+</FilesMatch>
