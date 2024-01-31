@@ -2,12 +2,12 @@
     Options +FollowSymLinks
     RewriteEngine On
 
+    # Redirect everything to the public folder
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ /public/$1 [L]
 
-  
-    RewriteCond %{HTTP_HOST} ^developer-dashboard\.smallsmall\.com$ [NC]
-    RewriteRule ^(.*)$ public/index.php [L]
+    # Redirect specific URL to public/index.php
+    RewriteRule ^developer-dashboard\.smallsmall\.com(/.*)?$ public/index.php [L]
 </IfModule>
