@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="../public/images/bss-favicon.png" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../public/css/bootstrap-css/bootstrap.min.css" crossorigin="anonymous" />
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,7 +136,7 @@
   </footer>
 
   <!-- Jquery js -->
-  <script src="{{ URL::asset('js/jquery.min.js'); }}" crossorigin="anonymous"></script>
+  <script src="../js/jquery.min.js')" crossorigin="anonymous"></script>
   <!-- Bootstrap js and Popper js -->
   <script src="../public/js/popper.min.js" crossorigin="anonymous"></script>
   <script src="../public/js/bootstrap-js/bootstrap.min.js" crossorigin="anonymous"></script>
