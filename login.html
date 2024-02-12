@@ -110,9 +110,15 @@
           <div class="form-group col-12 pb-3">
             <input type="text" class="form-control input-custom" id="" placeholder="Email">
           </div>
-          <div class="form-group col-12 pb-3">
-            <input type="password" class="form-control input-custom" id="" placeholder="Password">
+          <div class="input-group col-12 pb-3">
+            <input type="password" class="form-control input-custom" id="password" placeholder="Password">
+            <div class="input-group-append">
+              <span style="cursor: pointer;" class="input-group-text bg-white" id="pass-icon">
+                <i class="fa fa-eye-slash primary-text-color-alt icon-eye" aria-hidden="true"></i>
+              </span>
+            </div>
           </div>
+
           <div class="col-12 pb-3">
             <button class="btn primary-background default-border-radius btn-block">Login</button>
           </div>
@@ -147,14 +153,23 @@
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
 
-  <!-- <script>
-    // $(document).ready(function () {
-    const preloader = $("#preloader");
-    window.addEventListener("load", function () {
-      preloader.css("display", "none");
+
+  <!-- Script for open password -->
+  <script>
+    $(document).ready(function () {
+      const input = $("#password");
+      const iconEye = $("#pass-icon")
+      iconEye.click(function () {
+        $(".icon-eye").toggleClass("fa-eye-slash fa-eye");
+        if (input.attr("type") === "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+
     });
-      // });
-  </script> -->
+  </script>
 </body>
 
 </html>
