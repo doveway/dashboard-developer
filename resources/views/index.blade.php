@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Favicon link -->
-  <link rel="icon" type="image/x-icon" href="assets/images/bss-favicon.png" />
+  <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/images/bss-favicon.png'); }}" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../public/css/bootstrap-css/bootstrap.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}" crossorigin="anonymous" />
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +22,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="../public/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  <link href="../public/fontawesome/css/brands.css" rel="stylesheet" />
-  <link href="../public/fontawesome/css/solid.css" rel="stylesheet" />
+  <link href="{{ URL::asset('fontawesome/css/fontawesome.css'); }}" rel="stylesheet" />
+  <link href="{{ URL::asset('fontawesome/css/brands.css'); }}" rel="stylesheet" />
+  <link href="{{ URL::asset('fontawesome/css/solid.css'); }}" rel="stylesheet" />
 
   <!-- custom CSS -->
-  <link rel="stylesheet" href="../public/css/custom-css/header.css" />
-  <link rel="stylesheet" href="../public/css/custom-css/footer.css" />
-  <link rel="stylesheet" href="../public/css/custom-css/index.css" />
+  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/header.css'); }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/footer.css'); }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/custom-css/index.css'); }}" />
 
   <title>Dashboard - Developer Login</title>
 </head>
@@ -45,7 +45,7 @@
     <!-- desktop menu bar -->
     <nav class="navbar navbar-expand-lg nav-bottom-color navbar-light px-4 py-0 d-lg-flex d-none">
       <a class="navbar-brand" href="/">
-        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="../public/images/bss-logo.svg"
+        <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
           alt="logo" />
       </a>
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
@@ -104,7 +104,7 @@
                       d="M10.0001 17.5L9.9167 17.3749C9.33783 16.5066 9.0484 16.0725 8.666 15.7582C8.32746 15.4799 7.93739 15.2712 7.51809 15.1438C7.04446 15 6.52267 15 5.4791 15H4.33341C3.39999 15 2.93328 15 2.57676 14.8183C2.26316 14.6586 2.00819 14.4036 1.8484 14.09C1.66675 13.7335 1.66675 13.2668 1.66675 12.3333V5.16667C1.66675 4.23325 1.66675 3.76654 1.8484 3.41002C2.00819 3.09641 2.26316 2.84144 2.57676 2.68166C2.93328 2.5 3.39999 2.5 4.33341 2.5H4.66675C6.53359 2.5 7.46701 2.5 8.18005 2.86331C8.80726 3.18289 9.31719 3.69282 9.63677 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333M10.0001 17.5V7.83333M10.0001 17.5L10.0835 17.3749C10.6623 16.5066 10.9518 16.0725 11.3342 15.7582C11.6727 15.4799 12.0628 15.2712 12.4821 15.1438C12.9557 15 13.4775 15 14.5211 15H15.6667C16.6002 15 17.0669 15 17.4234 14.8183C17.737 14.6586 17.992 14.4036 18.1518 14.09C18.3334 13.7335 18.3334 13.2668 18.3334 12.3333V5.16667C18.3334 4.23325 18.3334 3.76654 18.1518 3.41002C17.992 3.09641 17.737 2.84144 17.4234 2.68166C17.0669 2.5 16.6002 2.5 15.6667 2.5H15.3334C13.4666 2.5 12.5332 2.5 11.8201 2.86331C11.1929 3.18289 10.683 3.69282 10.3634 4.32003C10.0001 5.03307 10.0001 5.96649 10.0001 7.83333"
                       stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg><span>&nbsp;&nbsp;&nbsp;Resources</span></a>
-                <a class="dropdown-item" href="/portfolio"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                <a class="dropdown-item" href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20" fill="none">
                     <path
                       d="M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5M7.5 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H7.5"
@@ -124,7 +124,7 @@
       </button> -->
       <div style="width: 32.5%" class="">
         <a href="/home">
-          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="../public/images/bss-logo.svg"
+          <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
             alt="logo" />
         </a>
       </div>
@@ -147,7 +147,7 @@
 
       <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
         aria-expanded="false" aria-label="Toggle navigation">
-        <img class="img-fluid" src="../public/images/menu-burger.svg" alt="" />
+        <img class="img-fluid" src="{{ URL::asset('images/menu-burger.svg'); }}" alt="" />
       </button>
 
       <div id="my-nav" class="collapse navbar-collapse mobile-menu-collapse pl-0 pt-4">
@@ -201,7 +201,7 @@
       </div>
       <div class="col-md-8  col-12">
         <div class="my-md-0 my-4">
-          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="../public/images/hand.svg"
+          <p style="font-weight: 600; font-size: 20px;">Welcome, {{$developerName}} <img src="{{ URL::asset('images/hand.svg'); }}"
               alt=""> </p>
           <p class="custom-font-size-13">Manage all your portfolio on the BuySmallsmall platform</p>
         </div>
@@ -387,10 +387,10 @@
   </footer>
 
   <!-- Jquery js -->
-  <script src="../public/js/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="{{ URL::asset('js/jquery.min.js'); }}" crossorigin="anonymous"></script>
   <!-- Bootstrap js and Popper js -->
-  <script src="../public/js/popper.min.js" crossorigin="anonymous"></script>
-  <script src="../public/js/bootstrap-js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="{{ URL::asset('js/popper.min.js'); }}" crossorigin="anonymous"></script>
+  <script src="{{ URL::asset('js/bootstrap-js/bootstrap.min.js'); }}" crossorigin="anonymous"></script>
 
   <!-- <script>
     // $(document).ready(function () {

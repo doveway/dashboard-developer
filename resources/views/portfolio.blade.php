@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Favicon link -->
-  <link rel="icon" type="image/x-icon" href="assets/images/bss-favicon.png" />
+  <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/images/bss-favicon.png'); }}" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-css/bootstrap.min.css'); }}" />
@@ -364,7 +364,7 @@
         
                           <div class="d-flex justify-content-between">
                             <div class="project-details d-flex justify-content-center">
-                              <img src=" ../images/project-img.jpeg " alt="" style="width: 40px; height: 40px"
+                              <img src="../images/project-img.jpeg " alt="" style="width: 40px; height: 40px"
                                 class="rounded-circle">
                               <div class="ml-2">
                                 <p class="custom-font-size-12">Project name</p>
