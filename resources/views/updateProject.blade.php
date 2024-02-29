@@ -53,11 +53,11 @@
       </button>
       <div id="my-nav" class="collapse navbar-collapse justify-content-between">
         <div class="" style=" width: 49%; font-weight: 600; color: #222222">
-          <p>Elite Developers Portal</p>
+          <p>CX Portal</p>
         </div>
         <ul class="justify-content-end nav">
-          <li class="nav-item mx-3">
-            <a href="#">
+        <li class="nav-item mx-3">
+            <a href="https://buysmallsmall.ng">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22M12 2C9.49872 4.73835 8.07725 8.29203 8 12C8.07725 15.708 9.49872 19.2616 12 22M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22M2.50002 9H21.5M2.5 15H21.5"
@@ -66,7 +66,7 @@
             </a>
           </li>
           <li class="nav-item mx-3">
-            <a href="#">
+            <a href="https://intercom.help/BuySmallsmall/en">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13M12 17H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
@@ -130,7 +130,7 @@
 
 
       <div class="" style="width: 49%; font-weight: 600; color: #222222">
-        <p>Elite Developers Portal</p>
+        <p>CX Portal</p>
       </div>
       <!-- <div class="d-flex user-container">
         <div class="user-shorthand d-flex justify-content-center align-items-center mr-2">

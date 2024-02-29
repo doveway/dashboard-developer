@@ -64,7 +64,7 @@
         <img class="img-fluid" src="./assets/images/menu-burger.svg" alt="" />
       </button> -->
       <div style="width: 32.5%" class="">
-        <a href="index.html">
+        <a href="/home">
           <img class="img-fluid pr-3 " style="border-right: 1px solid #E1E2E4;" src="{{ URL::asset('images/bss-logo.svg'); }}"
             alt="logo" />
         </a>
@@ -109,8 +109,16 @@
           <div class="form-group col-12 pb-3">
             <input type="text" class="form-control input-custom" id="email" placeholder="Email" name="email">
           </div>
-          <div class="form-group col-12 pb-3">
+          <!-- <div class="form-group col-12 pb-3">
             <input type="password" class="form-control input-custom" id="password" placeholder="Password" name = "password">
+          </div> -->
+          <div class="input-group col-12 pb-3">
+            <input type="password" class="form-control input-custom" id="password" placeholder="Password">
+            <div class="input-group-append">
+              <span style="cursor: pointer;" class="input-group-text bg-white" id="pass-icon">
+                <i class="fa fa-eye-slash primary-text-color-alt icon-eye" aria-hidden="true"></i>
+              </span>
+            </div>
           </div>
           <div class="col-12 pb-3" id="err" style = "color: red"></div>
           <div class="col-12 pb-3">
@@ -207,12 +215,17 @@
 
                     if(response == 1)
                     {
-                        window.location.replace('/home');
+                      window.location.replace('/home');
                     }
 
                     else if(response == 2)
                     {
                         $("#err").html("Email or Password is incorrect Please Check");
+                    }
+
+                    else if(response == 3)
+                    {
+                      window.location.replace('/insertProject');
                     }
                     console.log(response);
                     //window.location.href= data
@@ -222,6 +235,23 @@
     }
 
   </script>
+
+  <script>
+    $(document).ready(function () {
+      const input = $("#password");
+      const iconEye = $("#pass-icon")
+      iconEye.click(function () {
+        $(".icon-eye").toggleClass("fa-eye-slash fa-eye");
+        if (input.attr("type") === "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+
+    });
+  </script>
+  
 </body>
 
 </html>

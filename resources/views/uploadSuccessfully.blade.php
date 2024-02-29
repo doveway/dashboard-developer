@@ -207,7 +207,7 @@
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="index.html">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="/home">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path

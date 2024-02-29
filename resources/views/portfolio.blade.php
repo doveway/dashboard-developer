@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicon link -->
   <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/images/bss-favicon.png'); }}" />
@@ -58,8 +59,8 @@
           <p>Elite Developers Portal</p>
         </div>
         <ul class="justify-content-end nav">
-          <li class="nav-item mx-3">
-            <a href="#">
+        <li class="nav-item mx-3">
+            <a href="https://buysmallsmall.ng">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22M12 2C9.49872 4.73835 8.07725 8.29203 8 12C8.07725 15.708 9.49872 19.2616 12 22M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22M2.50002 9H21.5M2.5 15H21.5"
@@ -68,7 +69,7 @@
             </a>
           </li>
           <li class="nav-item mx-3">
-            <a href="#">
+            <a href="https://intercom.help/BuySmallsmall/en">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13M12 17H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
@@ -208,7 +209,7 @@
         <!-- Sub menu starts here -->
         <div class="container-fluid pl-0 d-flex nav-bottom-color sub-menu my-4">
           <div class="sub-nav d-flex flex-wrap">
-            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="/portfolio">
+            <a class="text-decoration-none secondary-text-color mr-4 py-3  " href="/home">
               <div class="sub-menu-link  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                   <path d="M7 13.125V14.875M10.5 9.625V14.875M14 6.125V14.875M6.825 18.375H14.175C15.6451 18.375 16.3802 18.375 16.9417 18.0889C17.4356 17.8372 17.8372 17.4356 18.0889 16.9417C18.375 16.3802 18.375 15.6451 18.375 14.175V6.825C18.375 5.35486 18.375 4.61979 18.0889 4.05827C17.8372 3.56435 17.4356 3.16278 16.9417 2.91111C16.3802 2.625 15.6451 2.625 14.175 2.625H6.825C5.35486 2.625 4.61979 2.625 4.05827 2.91111C3.56435 3.16278 3.16278 3.56435 2.91111 4.05827C2.625 4.61979 2.625 5.35486 2.625 6.825V14.175C2.625 15.6451 2.625 16.3802 2.91111 16.9417C3.16278 17.4356 3.56435 17.8372 4.05827 18.0889C4.61979 18.375 5.35486 18.375 6.825 18.375Z" stroke="#A6A299" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -265,7 +266,7 @@
             <div class="row">
 
               @foreach($totResults as $totResult)
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6 mb-3">
                 <div class="portfolio-container p-3">
 
                   <div class="d-flex justify-content-between">
@@ -283,9 +284,55 @@
                         </svg>
                       </button>
                       <div class="dropdown-menu custom-dropdown">
-                        <a class="dropdown-item" href="#">Edit</a>
+                      <button type="button" data-toggle="modal" data-target="#editForm{{$totResult->project_id}}" class="dropdown-item">Edit</button>
                         <a class="dropdown-item" href="/portfolioDetail/{{$totResult->project_id}}">View</a>
                       </div>
+
+                      <!--Edit Modal -->
+                      <div class="modal fade" id="editForm{{$totResult->project_id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <input type="hidden" id="projectID" value="{{$totResult->project_id}}">
+                                <div class="form-group">
+                                  <input type="text" class="form-control input-custom" id = "projectName" placeholder="Project name" value = "{{$totResult->project_name}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                  <input type="text" class="form-control input-custom" id = "projectPrice" placeholder="Price" value="{{$totResult->bssSelPrice}}">
+                                </div>
+                                <div class="form-group">
+                                  <input type="text" class="form-control input-custom" id = "proptyType" placeholder="Type of units" value = "{{$totResult->proptyType}}">
+                                </div>
+                                <div class="form-group">
+                                  <input type="number" class="form-control input-custom" id = "unitNumber" placeholder="Number of units" value="{{$totResult->unitNumber}}">
+                                </div>
+                                <div class="form-group">
+                                  <input type="number" class="form-control input-custom" id = "size" placeholder="Size (sqm)" value = "{{$totResult->size}}">
+                                </div>
+                                <div class="form-group">
+                                  <label>Reason for update</label>
+                                  <textarea class="form-control input-custom" id="Reason"
+                                    rows="3"></textarea>
+                                </div>
+
+                              </div>
+                              <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-danger default-border-radius"
+                                  data-dismiss="modal">Cancel</button>
+                                <button type="submit"
+                                  class="btn primary-background default-border-radius" onclick="Update()">Update</button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end of edit modal -->
                     </div>
 
                   </div>
@@ -314,8 +361,6 @@
 
                 </div>
               </div>
-              <div class="col-6"></div>
-              <div class="col-6"></div>
               @endforeach
             </div>
 
@@ -329,7 +374,7 @@
 
               $developerId = session()->get('developerID');
 
-              $sql = "SELECT a.* FROM developer_property as a WHERE a.developer_id = '$developerId'";
+              $sql = "SELECT a.* FROM developer_property as a WHERE a.developer_id = '$developerId' and active = 1";
 
               $totalResults = DB::select($sql);
 
@@ -364,7 +409,7 @@
         
                           <div class="d-flex justify-content-between">
                             <div class="project-details d-flex justify-content-center">
-                              <img src="../images/project-img.jpeg " alt="" style="width: 40px; height: 40px"
+                              <img src=" ../images/project-img.jpeg " alt="" style="width: 40px; height: 40px"
                                 class="rounded-circle">
                               <div class="ml-2">
                                 <p class="custom-font-size-12">Project name</p>
@@ -372,7 +417,7 @@
                               </div>
                             </div>
                             <div>
-                              <a href="portfolio-detail.html"
+                              <a href="#"
                                 class="btn primary-background default-border-radius custom-font-size-14 px-3 py-1 ">View</a>
                             </div>
         
@@ -554,6 +599,119 @@
       });
 
     });
+  </script>
+
+  <script>
+  //var unitNumbers = $('#unitNumber').val();
+
+    function Update()
+    {
+        if($('#projectName').val() == "")
+        {
+            $('#projectName').addClass('has-error');
+            $("#err").html("Name field cannot be empty");
+            return false;
+        }
+
+        else if($('#projectPrice').val() == "")
+        {
+            $('#projectPrice').addClass('has-error');
+            $("#projectPrice").html("project Price cannot be empty");
+            return false;
+        }
+
+        else if($('#proptyType').val() == "")
+        {
+            $('#proptyType').addClass('has-error');
+            $("#err").html("propert Type cannot be empty");
+            return false;
+        }
+
+        else if($('#unitNumber').val() == "")
+        {
+            $('#unitNumber').addClass('has-error');
+            $("#unitNumber").html("Number of units cannot be empty");
+            return false;
+        }
+
+        else if($('#size').val() == "")
+        {
+            $('#size').addClass('has-error');
+            $("#size").html("size cannot be empty");
+            return false;
+        }
+
+        else if($('#Reason').val() == "")
+        {
+            $('#Reason').addClass('has-error');
+            $("#Reason").html("Reason field cannot be empty");
+            return false;
+        }
+
+        else
+        {
+            //var data = $("#frm_login").serialize();
+
+            //alert(data);
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                }
+            });
+
+            var projectID = document.getElementById('projectID').value;
+
+            var projectName = document.getElementById('projectName').value;
+
+            var projectPrice = document.getElementById('projectPrice').value;
+
+            var proptyType =  document.getElementById('proptyType').value;
+
+            var unitNumber = document.getElementById('unitNumber').value;
+
+            var size = document.getElementById('size').value;
+
+            var Reason = document.getElementById('Reason').value;
+  
+            console.log(projectName);
+            console.log(projectPrice);
+            console.log(proptyType);
+            console.log(unitNumber);
+            console.log(size);
+            console.log(Reason);
+
+            var data = {"projectID" : projectID, "projectName" : projectName, "projectPrice" : projectPrice, "proptyType" : proptyType, "unitNumber" : unitNumber, "size" : size, "Reason" : Reason, _token: '{{csrf_token()}}'};
+
+            //console.log(data);
+
+            $.ajax({
+              
+              url : '/editProjects',
+
+              type: "POST",
+
+              async: true,
+
+              data: data,
+
+              success	: function (response){
+                  
+                  if(response == 1)
+                  {
+                    alert('Property successfully updated')                  }
+
+                  else if(response == 0)
+                  {
+                    alert('something went wrong with the update');
+                  }
+                  console.log(response);
+                  //window.location.href= data
+              }
+          });
+        }
+    }
+
   </script>
 
   <script>

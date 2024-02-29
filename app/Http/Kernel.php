@@ -50,7 +50,11 @@ class Kernel extends HttpKernel
 
         'protectedAccounts'=>[
             \App\Http\Middleware\accounts::class,
-        ] 
+        ],
+        
+        'protectedCx'=>[
+            \App\Http\Middleware\Cx::class,
+        ]
     ];
 
     /**
